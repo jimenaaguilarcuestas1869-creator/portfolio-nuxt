@@ -1,0 +1,168 @@
+[
+    {
+        "id": 1,
+        "titulo": "¿Quienes somos?",
+        "categoria": "Packaging",
+        "portada": "assets/img/proyectos/p1/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p1/portada.jpg",
+            "assets/img/proyectos/p1/foto 1.jpg",
+            "assets/img/proyectos/p1/foto 2.jpg",
+            "assets/img/proyectos/p1/foto 3.jpg",
+            "assets/img/proyectos/p1/foto 4.jpg",
+            "assets/img/proyectos/p1/boceto 1.png",
+            "assets/img/proyectos/p1/boceto 2.jpg",
+            "assets/img/proyectos/p1/boceto 3.jpg",
+            "assets/img/proyectos/p1/boceto 4.jpg"
+        ],
+        "descripcion": "Es un ecosistema de apoyo directo entre creadores y oyentes. \n\nA diferencia de los grandes servicios de streaming, Bandcamp se erige como un campamento base (Camp) para artistas independientes, donde la comunidad no solo consume música, sino que invierte en ella a través de formatos físicos y merchandising, devolviendo el valor humano y económico a la industria musical."
+    },
+    {
+        "id": 2,
+        "titulo": "Valores",
+        "categoria": "Packaging",
+        "portada": "assets/img/proyectos/p2/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p2/foto 1.jpg",
+            "assets/img/proyectos/p2/foto 2.jpg",
+            "assets/img/proyectos/p2/foto 3.jpg",
+            "assets/img/proyectos/p2/boceto 1.jpg",
+            "assets/img/proyectos/p2/boceto 2.jpg",
+            "assets/img/proyectos/p2/boceto 3.jpg"
+        ],
+        "descripcion": "Una exploración artística y conceptual que fusiona el packaging con la ilustración tradicional. \n\nEl diseño de la etiqueta es una metáfora visual: la propia forma de la etiqueta evoca una copa de vino que se llena en el momento de servir. \n\nInspirado en el concepto orgánico de Vel, este proyecto de dibujo amplía la serie con etiquetas para vinos tinto, rosado y blanco. \n\nTécnica: Lápices de colores y lápices acuarelables, jugando con la transparencia y el degradado para lograr un acabado evocador, donde la uva se funde con el líquido."
+    },
+    {
+        "id": 3,
+        "titulo": "Packaging para Cata la lata",
+        "categoria": "Packaging",
+        "portada": "assets/img/proyectos/p3/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p3/portada.jpg",
+            "assets/img/proyectos/p3/foto 1.jpg",
+            "assets/img/proyectos/p3/foto 2.jpg",
+            "assets/img/proyectos/p3/packaging 1.jpg",
+            "assets/img/proyectos/p3/packaging 2.jpg",
+            "assets/img/proyectos/p3/packaging 3.jpg"
+            
+        ],
+        "descripcion": "Proyecto de packaging conceptual para el certamen nacional 'Cata la Lata' (2022). \n\nEl diseño se rinde homenaje a la herencia artesanal del mosaico mediterráneo. La familia de productos (Sardinillas, Atún y Mejillones) se unifica mediante una retícula de teselas, donde cada referencia se identifica por un color específico y un patrón de mosaico único inspirado en el fruto del mar. \n\nEl punto diferencial reside en la arquitectura del envase: al apilar las latas, los mosaicos laterales se alinean, completando la ilustración de la tapa y creando un impacto visual único y continuo en el lineal del supermercado."
+    },
+    {
+        "id": 4,
+        "titulo": "Échos",
+        "categoria": "Branding",
+        "portada": "assets/img/proyectos/p4/portada.png",
+        "galeria": [
+            "assets/img/proyectos/p4/portada.png",
+            "assets/img/proyectos/p4/foto 1.png",
+            "assets/img/proyectos/p4/foto 2.png",
+            "assets/img/proyectos/p4/mockup 1.jpg",
+            "assets/img/proyectos/p4/mockup 2.jpg",
+            "assets/img/proyectos/p4/mockup 4.JPG",
+            "assets/img/proyectos/p4/mockup 5.JPG"
+        ],
+        "descripcion": "Diseño integral de marca para Échos, una tienda francesa especializada en la restauración artesanal de muebles con historia.\n\nEl concepto visual gira en torno a la 'segunda oportunidad' y la vida cíclica de los objetos. El símbolo nace de la abstracción de los nudos de la madera y la unión de líneas que conectan el pasado y el presente de cada pieza.\n\nLa identidad se construye sobre una paleta cromática orgánica: \n• Marrón Madera: Un tono profundo que evoca la calidez del hogar, la tierra y la materia prima artesanal.\n• Verde: Un matiz suave que simboliza la frescura de la restauración y la nueva vida del mueble.\n\nSistema tipográfico: \n• Montagu Slab: Aporta una personalidad exclusiva y robusta.\n• Lora Italic: Para un eslogan humano, artesano y cercano.\n• Nunito Sans: Para una lectura limpia, moderna y funcional."
+    },
+    {
+        "id": 5,
+        "titulo": "Jerarquía tipográfica",
+        "categoria": "Editorial",
+        "portada": "assets/img/proyectos/p5/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p5/portada.jpg",
+            "assets/img/proyectos/p5/foto 1.jpg",
+            "assets/img/proyectos/p5/foto 2.jpg"
+        ],
+        "descripcion": "Proyecto académico centrado en la exploración de la jerarquía visual y la composición tipográfica pura. \n\nEl reto consistió en organizar una estructura de información compleja y adaptarla a dos soportes con necesidades comunicativas distintas: un póster de gran formato y un folleto A5 a doble cara. \n\nMediante el uso exclusivo de la tipografía y una paleta cromática minimalista (Blanco + Rosa flúor), se trabajó la tensión visual, el ritmo y el peso de las palabras. El resultado es un sistema donde la legibilidad y la estética conviven para guiar el ojo del espectador a través de diferentes niveles de lectura."
+    },
+    {
+        "id": 6,
+        "titulo": "Cartel Ópera Carmen",
+        "categoria": "Editorial",
+        "portada": "assets/img/proyectos/p6/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p6/portada.jpg",
+            "assets/img/proyectos/p6/boceto 1.jpg",
+            "assets/img/proyectos/p6/boceto 2.jpg",
+            "assets/img/proyectos/p6/boceto 3.jpg",
+            "assets/img/proyectos/p6/boceto 4.jpg",
+            "assets/img/proyectos/p6/boceto 5.jpg"
+        ],
+        "descripcion": "Diseño de cartel para la ópera Carmen basado en la estética industrial de su puesta en escena. El concepto central nace de la fusión entre lo mecánico y lo orgánico, materializado en una flor construida artesanalmente con engranajes de cartulina metalizada. \n\nSiguiendo las directrices del director de la obra, el color rojo predomina como elemento icónico de la pasión y la identidad del personaje, creando un contraste vibrante con el brillo metálico de la pieza central. \n\nEn las imágenes se puede ver el proceso creativo hasta llegar al resultado final."
+    },
+    {
+        "id": 7,
+        "titulo": "Fanzine Sueños de tela",
+        "categoria": "Editorial",
+        "portada": "assets/img/proyectos/p7/fanzine 1.jpg",
+        "galeria": [
+            "assets/img/proyectos/p7/Video.mp4"
+        ],
+        "descripcion": "Fanzine experimental confeccionado íntegramente en tela que materializa los conceptos de refugio e intimidad. Inspirado en el mobiliario del Museo Nacional de Artes Decorativas, esta pieza busca recrear el espacio seguro y cálido del ritual del cuento antes de dormir. \n\nEl objeto editorial rompe con el soporte tradicional para ofrecer una experiencia táctil y orgánica a través de páginas desestructuradas que simulan la suavidad de las sábanas y el descanso. El uso de ilustraciones en acuarela y poemas cortos evoca el estado de duermevela, transportando al lector a un espacio onírico donde la imaginación no tiene límites."
+    },
+    {
+        "id": 8,
+        "titulo": "El mundo es un pañuelo",
+        "categoria": "Audiovisuales",
+        "portada": "assets/img/proyectos/p8/escena 1.png",
+        "galeria": [
+            "assets/img/proyectos/p8/pantalla callao.mp4"
+        ],
+        "descripcion": "Pieza de video-collage animado que reinterpreta visualmente el refrán popular. La narrativa sigue los encuentros fortuitos de dos vecinos en distintos puntos del mundo —desde el portal de su edificio hasta Londres o la inmensidad de la Luna—, reforzando la idea de la pequeñez del mundo y la casualidad.\n\nEl proyecto utiliza técnicas avanzadas de animación como el efecto Parallax para crear profundidad, animaciones de trazado para rutas de vuelo y el uso de 'títeres digitales' para los personajes. Todo bajo una estética de collage artesanal que mezcla texturas de papel, mapas y elementos surrealistas."
+    },
+    {
+        "id": 9,
+        "titulo": "Rotoscopia película In Time",
+        "categoria": "Audiovisuales",
+        "portada": "assets/img/proyectos/p9/portada.png",
+        "galeria": [
+            "assets/img/proyectos/p9/video.mp4"
+        ],
+        "descripcion": "Pieza de animación experimental realizada mediante la técnica de rotoscopia manual. Inspirada en la película 'In Time', el proyecto reflexiona sobre el tiempo como moneda de cambio y su naturaleza efímera.\n\nLa obra consta de 168 fotogramas ilustrados uno a uno en Adobe Fresco, utilizando una paleta de colores saturados y vibrantes que generan un degradado cromático en movimiento. Este estilo, aplicado sobre un fondo negro profundo, busca crear un contraste de alto impacto visual que simboliza la urgencia y la luz en un futuro distópico. Un ejercicio de artesanía digital donde cada trazo da vida a la narrativa del tiempo que se nos escapa."
+    },
+    {
+        "id": 10,
+        "titulo": "Teatros del Canal",
+        "categoria": "Branding",
+        "portada": "assets/img/proyectos/p10/mockup 3.png",
+        "galeria": [
+            "assets/img/proyectos/p10/portada.png",
+            "assets/img/proyectos/p10/mockup 1.png",
+            "assets/img/proyectos/p10/mockup 2.png",
+            "assets/img/proyectos/p10/mockup 3.png",
+            "assets/img/proyectos/p10/mockup 4.png",
+            "assets/img/proyectos/p10/mockup 5.png"
+        ],
+        "descripcion": "Proyecto grupal de rediseño integral para la identidad visual de los Teatros del Canal en Madrid. Bajo el concepto 'Sigue en movimiento', desarrollamos un sistema visual dinámico y ecléctico que refleja la diversidad artística del centro.\n\nLa propuesta se basa en una retícula constructiva de líneas curvas que aporta flexibilidad y ritmo a la marca. El proyecto abarca desde la creación del nuevo logotipo y símbolo hasta el desarrollo de un sistema de señalética (wayfinding) para el interior del teatro, aplicaciones gráficas y una paleta cromática vibrante. El resultado es una identidad moderna, accesible y en constante evolución, diseñada para conectar con una audiencia inquieta y culta."
+    },
+    {
+        "id": 11,
+        "titulo": "Castrillo de Ríopisuegra",
+        "categoria": "Branding",
+        "portada": "assets/img/proyectos/p11/portada.png",
+        "galeria": [
+            "assets/img/proyectos/p11/portada.png",
+            "assets/img/proyectos/p11/mockup.png",
+            "assets/img/proyectos/p11/marca 1.png",
+            "assets/img/proyectos/p11/marca 2.png",
+            "assets/img/proyectos/p11/marca 3.png",
+            "assets/img/proyectos/p11/marca 4.png",
+            "assets/img/proyectos/p11/marca 5.png"
+        ],
+        "descripcion": "Rediseño de la identidad institucional para el municipio de Castrillo de Ríopisuerga (Burgos). El proyecto nace de la necesidad de dotar a una localidad de la 'España vaciada' de una imagen moderna que ponga en valor el orgullo rural y su patrimonio histórico.\n\nLa propuesta se basa en la síntesis geométrica del escudo tradicional, simplificando elementos clave como el castillo, el río y las espigas de trigo bajo una retícula constructiva rigurosa. La paleta cromática se inspira directamente en el entorno: el amarillo del trigo y la arquitectura local, combinado con un sistema tipográfico limpio y legible. El resultado es una marca versátil que conecta la tradición heráldica con la comunicación institucional del siglo XXI."
+    },
+    {
+        "id": 12,
+        "titulo": "Libro experimental Don Quijote de la Mancha",
+        "categoria": "Editorial",
+        "portada": "assets/img/proyectos/p12/portada.jpg",
+        "galeria": [
+            "assets/img/proyectos/p12/portada.jpg",
+            "assets/img/proyectos/p12/mockup 1.jpg",
+            "assets/img/proyectos/p12/mockup 2.jpg"
+        ],
+        "descripcion": "Rediseño experimental de 'El ingenioso hidalgo Don Quijote de la Mancha' que desafía las convenciones de la maquetación clásica. El proyecto explora los límites de la legibilidad y la composición tipográfica, transformando el texto de Cervantes en una pieza visual donde las palabras fluyen de forma orgánica y desestructurada.\n\nLa propuesta utiliza la repetición de tipos, cambios de escala extremos y una superposición de capas que reflejan la locura y el caos mental del protagonista. Es un ejercicio de 'tipografía expresiva' que busca que el lector no solo lea la historia, sino que perciba la energía y el desorden de la narrativa a través de la mancha tipográfica y el uso estratégico del espacio en blanco."
+    }
+
+]

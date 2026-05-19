@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sara Escribano | Portfolio</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body data-barba="wrapper">
+        <header class="main-header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/img/logo_bandcamp_nav.png" alt="Sara Escribano Logo">
+                </a>
+
+                <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#proyectos" class="no-barba">Proyectos</a></li>
+                        <li><a href="#sobre-mi" class="no-barba">Sobre mí</a></li>
+                        <li><a href="#contacto" class="no-barba">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main data-barba="container" data-barba-namespace="home">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <img src="assets/img/fondo_logo_home.png" alt="Sara Escribano" class="hero-logo-main">
+                </div>
+
+                <img src="assets/img/fondo_forma1_home.png" class="shape shape-1" alt="">
+                <img src="assets/img/fondo_forma2_home.png" class="shape shape-2" alt="">
+            </section>
+
+            <section id="proyectos" class="proyectos-section">
+                <div class="container">
+                    <h2 class="section-title">Mis Proyectos</h2>
+                    <div class="filter-container">
+                        <button class="filter-btn active" data-filter="concepto">Concepto</button>
+                        <button class="filter-btn" data-filter="nucleo">Núcleo</button>
+                        <button class="filter-btn" data-filter="sistema">Sistema</button>
+                        <button class="filter-btn" data-filter="recursos">Recursos</button>
+                        <button class="filter-btn" data-filter="aplicaciones">Aplicaciones</button>
+                    </div>
+                    <div id="grid-proyectos" class="projects-grid"></div>
+                </div>
+            </section> 
+
+            <section id="sobre-mi" class="sobre-mi-section">
+                <div class="container">
+                    <h2 class="section-title">Sobre mi</h2>
+                    <div class="about-wrapper">
+                    <div class="about-image">
+                            <div class="swiper swiper-gustos">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide gustos-card">
+                                        <img src="assets/img/sobre-mi 1.jpg" alt="bolillos">
+                                    </div>
+                                    <div class="swiper-slide gustos-card">
+                                        <img src="assets/img/sobre-mi 2.jpg" alt="fanzine">
+                                    </div>
+                                    <div class="swiper-slide gustos-card">
+                                        <img src="assets/img/sobre-mi 3.jpg" alt="seri">
+                                    </div>
+                                    </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="about-content">
+                            <h3>Hola, soy <span class="highlight">Sara</span>, diseñadora gráfica.</h3>
+                            <p>Mi proceso creativo siempre empieza fuera de la pantalla, me apasiona todo lo relacionado con la <span class="highlight-alt">parte manual</span>.</p>
+                            <p>Mi enfoque profesional se centra en el <span class="highlight-alt">packaging</span>, el <span class="highlight-alt">diseño editorial</span> y el <span class="highlight-alt">branding</span>. Me gusta crear marcas que no solo se vean bien en una pantalla, sino que transmitan una identidad sólida, limpia y coherente. </p>
+                            <p>Mi objetivo es unir esa delicadeza de los <span class="highlight-alt">soportes físicos</span> con la funcionalidad del mundo digital, cuidando cada detalle desde el primer boceto hasta la ejecución final.</p>
+                            <a href="assets/pdf/CV_Sara_Escribano.pdf" target="_blank" class="btn-cv">
+                                Ver Currículum
+                            </a>
+                            <div class="skills-container">
+                                <p class="skills-title">Programas</p>
+                                <div class="skills-grid">
+                                    <div class="skill-item"><img src="assets/img/iconos/photoshop.png" alt="Photoshop"></div>
+                                    <div class="skill-item"><img src="assets/img/iconos/illustrator.png" alt="Illustrator"></div>
+                                    <div class="skill-item"><img src="assets/img/iconos/InDesign.png" alt="InDesign"></div>
+                                    <div class="skill-item"><img src="assets/img/iconos/after_effects.png" alt="After Effects"></div>
+                                    <div class="skill-item"><img src="assets/img/iconos/Visual_Studio_Code.png" alt="VS Code"></div>
+                                    <div class="skill-item"><img src="assets/img/iconos/images.png" alt="FIgma"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="contacto-section">
+                <div class="container">
+                    <h2 class="section-title">Contacto</h2> 
+                    
+                    <div class="about-wrapper">
+                        <div class="about-image">
+                            <img src="assets/img/tu-foto.jpg" alt="Sara Escribano">
+                            <div class="about-shape"></div> 
+                        </div>
+                        
+                        <div class="contact-links">
+                            <div class="contact-item">
+                                <img src="assets/img/iconos/icono-mail.svg" alt="Email" class="contact-icon">
+                                <a href="mailto:escribano.sara@gmail.com">escribano.sara@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="assets/img/iconos/icono-ig.svg" alt="Instagram" class="contact-icon">
+                                <a href="https://www.instagram.com/sara.escribano_design/?hl=es" target="_blank">@sara.escribano_desing</a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="assets/img/iconos/icono-ig.svg" alt="Instagram Personal" class="contact-icon">
+                                <a href="https://www.instagram.com/misstipquill/?hl=es" target="_blank">@misstipquill</a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="assets/img/iconos/icono-linkedin.svg" alt="LinkedIn" class="contact-icon">
+                                <a href="https://www.linkedin.com/in/sara-escribano-alba-3a16b1233/?skipRedirect=true" target="_blank">Sara Escribano</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+            <img src="assets/img/iconos/icono-flecha.svg" alt="Subir">
+        </button>
+
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                
+                <div class="swiper swiper-container">
+                    <div class="swiper-wrapper" id="modal-gallery">
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="modal-text">
+                    <h2 id="modal-title">Título</h2>
+                    
+                    <p id="modal-category" class="category">Categoría</p>
+                    <p id="modal-description">Descripción corta del proyecto.</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/@barba/core"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Sara Escribano — Diseñadora Gráfica</p>
+        </div>
+    </footer>
+</html>

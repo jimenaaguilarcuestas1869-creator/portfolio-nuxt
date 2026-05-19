@@ -1,0 +1,114 @@
+// 1. Variables y Footer
+@import 'variables';
+@import 'footer';
+
+// 2. RESET GLOBAL
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+// 3. ESTRUCTURA BARBA / GSAP
+main, [data-barba="container"], section {
+    width: 100%;
+    overflow-x: hidden !important;
+}
+
+// 4. COMPONENTES
+@import 'header';
+@import 'hero';
+@import 'proyectos';
+@import 'sobre-mi';
+@import 'contacto';
+
+
+// 5. ESTILOS GLOBALES
+body {
+    background-color: $blanco;
+    color: $negro-texto;
+    font-family: $font-cuerpo;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: $font-principal;
+    font-weight: 400;
+}
+
+h2 {
+    font-family: $font-principal !important;
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+    font-weight: 700 !important;
+    color: $verde-marca !important;
+    text-transform: uppercase;
+    letter-spacing: 2px !important;
+    margin-bottom: 40px !important;
+    text-align: center;
+}
+
+h3 {
+    font-family: $font-principal;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+    text-align: left;
+    
+    .highlight {
+        color: $verde-marca;
+    }
+}
+
+// 6. RESPONSIVE GENERAL
+@media (max-width: 768px) {
+    section {
+        padding: 50px 20px !important;
+    }
+}
+
+// 7. BOTÓN BACK TO TOP
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: $verde-marca !important;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 9999 !important; 
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        background-color: darken($verde-marca, 10%) !important;
+        transform: scale(1.1);
+    }
+
+    img {
+        width: 25px;
+        height: auto;
+        filter: brightness(0) invert(1);
+    }
+}

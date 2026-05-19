@@ -1,0 +1,28 @@
+.main-footer {
+    padding: 60px 0;
+    border-top: 1px solid #f0f0f0; 
+    margin-top: 40px;
+    text-align: center;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        
+        p {
+            font-family: $font-cuerpo;
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+// Responsive
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,121 @@
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: rgba($blanco, 0.9); 
+    z-index: 2000;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10%; 
+        max-width: 100%;
+    }
+
+    .logo {
+        img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+    }
+
+    // Navegación Desktop
+    .nav-menu ul {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: $negro-texto;
+            font-family: $font-cuerpo;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $verde-marca;
+            }
+        }
+    }
+
+    // Botón Hamburguesa
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        .bar {
+            width: 30px;
+            height: 2px;
+            background-color: $verde-marca;
+            transition: 0.3s;
+        }
+    }
+
+    // --- RESPONSIVE MÓVIL ---
+    @media (max-width: 768px) {
+        padding: 0.8rem 0;
+
+        .header-container {
+            padding: 0 5%;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .menu-toggle {
+            display: flex;
+
+            &.active {
+                .bar:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg);
+                }
+                .bar:nth-child(2) {
+                    opacity: 0;
+                }
+                .bar:nth-child(3) {
+                    transform: translateY(-8px) rotate(-45deg);
+                }
+            }
+        }
+
+        .nav-menu {
+            display: none;
+            
+            &.active {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: $blanco;
+                padding: 3rem 1rem;
+                text-align: center;
+                border-top: 1px solid rgba($negro-texto, 0.05);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+                ul {
+                    flex-direction: column;
+                    gap: 2.5rem;
+                    
+                    a {
+                        font-family: $font-principal;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "nuxt": "^4.4.6",
+    "swiper": "^12.1.4"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.99.0"
+  }
+}
