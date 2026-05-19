@@ -42,16 +42,21 @@
             </section>
 
             <section id="proyectos" class="proyectos-section">
-                <div class="container">
-                    <h2 class="section-title">Mis Proyectos</h2>
-                    <div class="filter-container">
-                        <button class="filter-btn active" data-filter="concepto">Concepto</button>
-                        <button class="filter-btn" data-filter="nucleo">Núcleo</button>
-                        <button class="filter-btn" data-filter="sistema">Sistema</button>
-                        <button class="filter-btn" data-filter="recursos">Recursos</button>
-                        <button class="filter-btn" data-filter="aplicaciones">Aplicaciones</button>
-                    </div>
-                    <div id="grid-proyectos" class="projects-grid"></div>
+                <div class="container-manual-global">
+                    <aside class="libreta-sidebar">
+                        <nav class="libreta-pestanas">
+                        <button 
+                            v-for="opcion in opcionesMenu" 
+                            :key="opcion.id"
+                            @click="filtroActivo = opcion.id" 
+                            :class="['pestana-btn', { active: filtroActivo === opcion.id }]"
+                        >
+                            <span class="pestana-texto">{{ opcion.nombre }}</span>
+                        </button>
+                        </nav>
+                    </aside>
+
+                    <main class="libreta-cuerpo">
                 </div>
             </section> 
 

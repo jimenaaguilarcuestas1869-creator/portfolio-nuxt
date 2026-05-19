@@ -13,6 +13,15 @@ const filtroActivo = ref('concepto')
 const modalAbierto = ref(false)
 const proyectoSeleccionado = ref(null)
 
+const opcionesMenu = [
+  { id: 'concepto', nombre: 'Concepto' },
+  { id: 'packaging', nombre: 'Núcleo' },
+  { id: 'branding', nombre: 'Sistema' },
+  { id: 'editorial', nombre: 'Recursos' },
+  { id: 'audiovisuales', nombre: 'Aplicaciones' },
+  { id: 'web', nombre: 'Web' }
+]
+
 // --- FILTRADO DINÁMICO ---
 const proyectosFiltrados = computed(() => {
   if (filtroActivo.value === 'concepto') return proyectos.value
@@ -57,79 +66,55 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
 
 <template>
   <section id="proyectos" class="proyectos-section">
-    <div class="container">
-      <h2 class="section-title">Mis Proyectos</h2>
-      
-      <div class="filter-container">
-        <button 
-          @click="filtroActivo = 'concepto'" 
-          :class="['filter-btn', { active: filtroActivo === 'concepto' }]"
-        >
-          Concepto
-        </button>
-        <button 
-          @click="filtroActivo = 'packaging'" 
-          :class="['filter-btn', { active: filtroActivo === 'packaging' }]"
-        >
-          Núcleo
-        </button>
-        <button 
-          @click="filtroActivo = 'branding'" 
-          :class="['filter-btn', { active: filtroActivo === 'branding' }]"
-        >
-          Sistema
-        </button>
-        <button 
-          @click="filtroActivo = 'editorial'" 
-          :class="['filter-btn', { active: filtroActivo === 'editorial' }]"
-        >
-          Recursos
-        </button>
-        <button 
-          @click="filtroActivo = 'audiovisuales'" 
-          :class="['filter-btn', { active: filtroActivo === 'audiovisuales' }]"
-        >
-          Aplicaciones
-        </button>
-        <button 
-          @click="filtroActivo = 'web'" 
-          :class="['filter-btn', { active: filtroActivo === 'web' }]"
-        >
-          Web
-        </button>
-      </div>
-      
-<div v-if="filtroActivo === 'concepto'" class="manual-content-display">
-        <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
-          
-          <div class="manual-left">
-            <h2 class="manual-title">{{ proyecto.titulo }}</h2>
-            <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
-          </div>
-          
-          <div class="manual-right">
-            <p class="manual-text">{{ proyecto.descripcion }}</p>
-          </div>
+    <div class="container-manual-global">
+      <div class="libreta-sidebar">
+        <div class="libreta-pestanas">
+          <button 
+            v-for="(fase, index) in opcionesMenu" 
+            :key="fase.id"
+            :class="['pestana-btn', { active: filtroActivo === fase.id }]"
+            @click="filtroActivo = fase.id"
+          >
+            <span v-if="filtroActivo === fase.id">{{ fase.nombre }}</span>
+          </button>
         </div>
-        
       </div>
+      
+      <div class="libreta-cuerpo">
 
-      <div v-else id="grid-proyectos" class="projects-grid">
-        <div 
-          v-for="proyecto in proyectosFiltrados" 
-          :key="proyecto.id"
-          class="project-card"
-          @click="abrirModal(proyecto)"
-        >
-          <div class="project-img-container">
-            <img :src="proyecto.portada.replace('assets/', '/')" :alt="proyecto.titulo">
+        <div v-if="filtroActivo === 'concepto'" class="manual-content-display">
+          <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
+            
+            <div class="manual-left">
+              <h2 class="manual-title">{{ proyecto.titulo }}</h2>
+              <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
+            </div>
+            
+            <div class="manual-right">
+              <p class="manual-text">{{ proyecto.descripcion }}</p>
+            </div>
           </div>
-          <div class="project-info">
-            <span>{{ proyecto.categoria }}</span>
-            <h3>{{ proyecto.titulo }}</h3>
-          </div>
+          
         </div>
-      </div>    </div>
+
+        <div v-else id="grid-proyectos" class="projects-grid">
+          <div 
+            v-for="proyecto in proyectosFiltrados" 
+            :key="proyecto.id"
+            class="project-card"
+            @click="abrirModal(proyecto)"
+          >
+            <div class="project-img-container">
+              <img :src="proyecto.portada.replace('assets/', '/')" :alt="proyecto.titulo">
+            </div>
+            <div class="project-info">
+              <span>{{ proyecto.categoria }}</span>
+              <h3>{{ proyecto.titulo }}</h3>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
 
     <div 
       v-if="modalAbierto && proyectoSeleccionado" 

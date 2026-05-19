@@ -1,6 +1,9 @@
 .proyectos-section {
-    padding: 100px $margin-desktop;
-    background-color: #1A73C1;
+    padding: 0;
+    background-color: #F4EBE1;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
 
     .projects-grid {
         display: grid;
@@ -56,36 +59,106 @@
     }
 }
 
-.filter-container {
+.container-manual-global {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px 60px 120px; 
+  box-sizing: border-box;
+  position: relative;
+}
+
+.libreta-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.libreta-pestanas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60px; 
+  gap: 0; 
+
+  .pestana-btn {
+    flex: 1; 
+    border: none;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 12px 12px 0;
+    transition: all 0.3s ease;
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    
-    button {
-        padding: 8px 20px;
-        border: 1px solid $verde-marca;
-        background: transparent;
-        color: $verde-marca;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s;
-        
-        &.active, &:hover {
-            background: #55A6EC;
-            color: $blanco;
-        }
+    align-items: center;
+    color: white;
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    // Paleta exacta por orden del menú
+    &:nth-child(1) { background-color: #1D74CA; } // Concepto / Introducción
+    &:nth-child(2) { background-color: #E24632; } // Núcleo
+    &:nth-child(3) { background-color: #1AA74C; } // Sistema
+    &:nth-child(4) { background-color: #F9B81A; } // Recursos
+    &:nth-child(5) { background-color: #F472A5; } // Aplicaciones
+    &:nth-child(6) { background-color: #00BCD4; } // Web
+
+    &:hover {
+      width: 75px;
     }
 
-    @media (max-width: $tablet) {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 0 10px;
-        button {
-            padding: 6px 15px;
-            font-size: 0.85rem;
-        }
+    &.active {
+      width: 160px; 
+      writing-mode: horizontal-tb; 
+      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 110;
     }
+  }
+}
+
+.libreta-cuerpo {
+  width: 100%;
+  background-color: #F4EBE1; 
+  padding: 20px 0;
+  
+  .manual-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    color: #0B2545; 
+  }
+
+  h2.manual-title {
+    font-size: 5.5rem; 
+    color: #0B2545;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .manual-subtitle {
+    font-size: 1.8rem;
+    color: #1D74CA;
+  }
+
+  .manual-text {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #0B2545;
+    max-width: 700px;
+  }
 }
 
 .modal {
@@ -107,12 +180,6 @@
         margin: 50px auto;
         display: flex;
         flex-direction: column;
-
-        #modal-gallery, #modal-title, #modal-category, #modal-description {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
 
         .swiper-container {
             width: 100%;
@@ -161,22 +228,6 @@
                 font-size: 2.5rem; 
                 color: #333; 
                 margin-bottom: 5px; 
-            }
-            span { 
-                color: $verde-marca; 
-                font-weight: bold; 
-                text-transform: uppercase; 
-                letter-spacing: 2px;
-            }
-            p { 
-                font-family: $font-cuerpo;
-                font-size: 1.1rem; 
-                line-height: 1.8; 
-                color: #555; 
-                margin: 20px auto 0;
-                max-width: 700px;
-                white-space: pre-line;
-                text-align: left;
             }
         }
     }
