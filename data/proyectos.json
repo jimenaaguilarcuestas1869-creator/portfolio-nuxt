@@ -103,9 +103,9 @@
     },
     {
         "id": 8,
-        "titulo": "El mundo es un pañuelo",
+        "titulo": "cartel fotografico",
         "categoria": "Audiovisuales",
-        "portada": "assets/img/proyectos/p8/escena 1.png",
+        "portada": "assets/img/proyectos/p8/sky billboard mockup2.jpg",
         "galeria": [
             "assets/img/proyectos/p8/pantalla callao.mp4"
         ],
@@ -113,9 +113,9 @@
     },
     {
         "id": 9,
-        "titulo": "Rotoscopia película In Time",
+        "titulo": " cartel ilustración",
         "categoria": "Audiovisuales",
-        "portada": "assets/img/proyectos/p9/portada.png",
+        "portada": "assets/img/proyectos/p9/Free Banner On  Newspaper Stand Mocup.png",
         "galeria": [
             "assets/img/proyectos/p9/video.mp4"
         ],
