@@ -70,15 +70,76 @@
 
 .libreta-sidebar {
   position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
+  left: -80px; 
+  
+  
+  top: 60px; 
+  
+  
+  height: calc(100vh - 60px); 
+  
   width: auto;
   z-index: 100;
   display: flex;
   align-items: center;
-}
+  opacity: 0; 
+  pointer-events: none; 
+  transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease; 
 
+  &.is-visible {
+    left: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.libreta-pestanas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 60px; 
+  gap: 0; 
+
+  .pestana-btn {
+    flex: 1; 
+    border: none;
+    padding: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 12px 12px 0;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    // Paleta exacta por orden del menú
+    &:nth-child(1) { background-color: #1D74CA; } 
+    &:nth-child(2) { background-color: #E24632; } 
+    &:nth-child(3) { background-color: #1AA74C; } 
+    &:nth-child(4) { background-color: #F9B81A; } 
+    &:nth-child(5) { background-color: #F472A5; } 
+    &:nth-child(6) { background-color: #00BCD4; } 
+
+    &:hover {
+      width: 75px;
+    }
+
+    &.active {
+      width: 160px; 
+      writing-mode: horizontal-tb; 
+      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 110;
+    }
+  }
+}
 .libreta-pestanas {
   display: flex;
   flex-direction: column;

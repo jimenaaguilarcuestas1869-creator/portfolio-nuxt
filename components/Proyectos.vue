@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed, nextTick, onMounted, onUnmounted } from 'vue' 
 import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
@@ -21,6 +21,21 @@ const opcionesMenu = [
   { id: 'audiovisuales', nombre: 'Aplicaciones' },
   { id: 'web', nombre: 'Web' }
 ]
+
+// ---  SCROLL EN EL HOME ---
+const isSidebarVisible = ref(false)
+
+const handleScroll = () => {
+  isSidebarVisible.value = window.scrollY >= window.innerHeight - 150
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 // --- FILTRADO DINÁMICO ---
 const proyectosFiltrados = computed(() => {
@@ -67,7 +82,8 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
 <template>
   <section id="proyectos" class="proyectos-section">
     <div class="container-manual-global">
-      <div class="libreta-sidebar">
+      
+      <div :class="['libreta-sidebar', { 'is-visible': isSidebarVisible }]">
         <div class="libreta-pestanas">
           <button 
             v-for="(fase, index) in opcionesMenu" 
