@@ -19,6 +19,24 @@
         "imagen": "/img/valores-bandcamp.jpg"
     },
     {
+        "id": "bandcamp-idea-principal",
+        "titulo": "IDEA PRINCIPAL",
+        "subtitulo": "El campamento base de la música independiente",
+        "categoria": "concepto",
+        "descripcion": "El rediseño nace de una premisa clara: Bandcamp no es una plataforma de consumo masivo, sino un punto de encuentro y resistencia cultural. Frente al algoritmo frío del streaming tradicional, transformamos la interfaz en un espacio que celebra el coleccionismo y el apoyo directo, donde los usuarios no solo reproducen pistas, sino que apuestan por la supervivencia económica de los creadores.",
+        "textoSecundario": "La identidad visual y la experiencia de usuario se reformulan para evocar el espíritu original de las tiendas de discos locales y los fanzines: espacios físicos donde la música se busca, se descubre con pausa y se valora como una pieza artística única.",
+        "imagen": "/img/concepto-idea-principal.jpg"
+    },
+    {
+        "id": "bandcamp-base-estrategica",
+        "titulo": "BASE ESTRATÉGICA",
+        "subtitulo": "Trasladar la tactilidad analógica al entorno digital",
+        "categoria": "concepto",
+        "descripcion": "Nuestra estrategia se asienta sobre el concepto de la 'tactilidad digital'. Buscamos recuperar la humanidad y el calor de los formatos físicos (el grano del vinilo, el mecanismo del cassette, el diseño editorial del formato físico) y traducirlos en interacciones visuales dentro de la pantalla.",
+        "textoSecundario": "Esto se traduce en un sistema gráfico texturizado, un uso consciente del espacio y una dirección de arte que huye de la pulcritud digital corporativa. El objetivo es que la interfaz se 'sienta' viva, cercana y texturada, priorizando la escucha activa frente a la reproducción aleatoria.",
+        "imagen": "/img/concepto-base-estrategica.jpg"
+    },
+    {
         "id": 3,
         "titulo": "Packaging para Cata la lata",
         "categoria": "Packaging",
