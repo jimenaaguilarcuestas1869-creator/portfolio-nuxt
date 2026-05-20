@@ -3,7 +3,6 @@
     <Header />
     <Hero />
     <Proyectos />
-    <SobreMi />
-    <Contacto />
+   <Contacto />
   </div>
 </template>
