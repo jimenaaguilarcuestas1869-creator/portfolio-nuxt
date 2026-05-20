@@ -4,7 +4,6 @@ import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
 
-// Registrar los componentes interactivos de Swiper
 register()
 
 // --- ESTADOS REACTIVOS ---
@@ -29,17 +28,17 @@ const handleScroll = () => {
   const scrollY = window.scrollY
   const windowHeight = window.innerHeight
 
-  // 1. Controlar la visibilidad de la barra lateral (aparece tras pasar el Hero)
+  // 1. Mostrar barra de pestañas tras pasar el Hero
   isSidebarVisible.value = scrollY >= windowHeight - 150
 
-  // 2. Controlar si llegamos a la sección de abajo (Contacto) mediante coordenadas reales 🎯
-  const seccionContacto = document.getElementById('contacto') || document.querySelector('.proyectos-section')
+  // 2. Controlar de forma exacta la sección inferior de los 4 compañeros
+  const seccionContacto = document.getElementById('contacto')
   
   if (seccionContacto) {
     const rect = seccionContacto.getBoundingClientRect()
     
-    // Si la sección de abajo ya ha entrado o está muy cerca de entrar
-    if (rect.top <= 450) {
+    // Solo se ocultan las pestañas si la sección de abajo ocupa gran parte de la pantalla visible
+    if (rect.top <= 100) {
       if (filtroActivo.value !== null) {
         filtroActivo.value = null
       }
@@ -47,9 +46,26 @@ const handleScroll = () => {
     }
   }
 
-  // 3. Si volvemos arriba, se restaura la primera pestaña automáticamente
-  if (filtroActivo.value === null) {
+  // 3. Si volvemos arriba y no hay ninguna seleccionada, restauramos la primera por defecto
+  if (filtroActivo.value === null && scrollY < windowHeight) {
     filtroActivo.value = 'concepto'
+  }
+}
+
+// --- FUNCIÓN PARA CAMBIAR DE PESTAÑA SIN ERRORES DE SCROLL ---
+const cambiarFiltro = async (id) => {
+  filtroActivo.value = id
+  
+  // Esperamos a que Vue procese el cambio de contenido en el DOM
+  await nextTick()
+  
+  // Llevamos la vista cómodamente al inicio de la sección de proyectos para que el menú no falle
+  const inicioProyectos = window.innerHeight - 80
+  if (window.scrollY > inicioProyectos) {
+    window.scrollTo({
+      top: inicioProyectos,
+      behavior: 'smooth'
+    })
   }
 }
 
@@ -111,7 +127,7 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
             v-for="fase in opcionesMenu" 
             :key="fase.id"
             :class="['pestana-btn', { active: filtroActivo === fase.id }]"
-            @click="filtroActivo = fase.id"
+            @click="cambiarFiltro(fase.id)"
           >
             <span v-if="filtroActivo === fase.id">{{ fase.nombre }}</span>
           </button>
@@ -119,7 +135,6 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       </div>
       
       <div class="libreta-cuerpo">
-
         <div v-if="filtroActivo === 'concepto' || filtroActivo === null" class="manual-content-display">
           <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
             <div class="manual-left">
@@ -215,30 +230,25 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
   padding: 60px 0;
   color: #000000;
 }
-
 .manual-title {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
 }
-
 .manual-subtitle {
   font-size: 1.8rem;
   color: #3b82f6;
 }
-
 .manual-right {
   align-self: flex-end;
   max-width: 500px;
   text-align: left;
 }
-
 .manual-text {
   font-size: 1.1rem;
   line-height: 1.6;
 }
-
 @media (min-width: 768px) {
   .manual-layout {
     flex-direction: row;
