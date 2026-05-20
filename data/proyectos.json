@@ -1,36 +1,22 @@
 [
     {
-        "id": 1,
-        "titulo": "¿Quienes somos?",
-        "categoria": "Packaging",
-        "portada": "assets/img/proyectos/p1/portada.jpg",
-        "galeria": [
-            "assets/img/proyectos/p1/portada.jpg",
-            "assets/img/proyectos/p1/foto 1.jpg",
-            "assets/img/proyectos/p1/foto 2.jpg",
-            "assets/img/proyectos/p1/foto 3.jpg",
-            "assets/img/proyectos/p1/foto 4.jpg",
-            "assets/img/proyectos/p1/boceto 1.png",
-            "assets/img/proyectos/p1/boceto 2.jpg",
-            "assets/img/proyectos/p1/boceto 3.jpg",
-            "assets/img/proyectos/p1/boceto 4.jpg"
-        ],
-        "descripcion": "Es un ecosistema de apoyo directo entre creadores y oyentes. \n\nA diferencia de los grandes servicios de streaming, Bandcamp se erige como un campamento base (Camp) para artistas independientes, donde la comunidad no solo consume música, sino que invierte en ella a través de formatos físicos y merchandising, devolviendo el valor humano y económico a la industria musical."
+        
+        "id": "bandcamp-concepto",
+        "titulo": "¿Quiénes somos?",
+        "subtitulo": "Un ecosistema de apoyo directo entre creadores y oyentes",
+        "categoria": "concepto",
+        "descripcion": "Es un ecosistema de apoyo directo entre creadores y oyentes. \n\nA diferencia de los grandes servicios de streaming, Bandcamp se erige como un campamento base (Camp) para artistas independientes, donde la comunidad no solo consume música, sino que invierte en ella a través de formatos físicos y merchandising, devolviendo el valor humano y económico a la industria musical.",
+        "textoSecundario": "Nuestra propuesta de rediseño se centra en recuperar la 'imperfección' y la humanidad de los medios analógicos como el vinilo y el cassette, trasladando esa experiencia táctil y física al entorno de la interfaz digital.",
+        "imagen": "/img/concepto-hero.jpg"
     },
     {
-        "id": 2,
-        "titulo": "Valores",
-        "categoria": "Packaging",
-        "portada": "assets/img/proyectos/p2/portada.jpg",
-        "galeria": [
-            "assets/img/proyectos/p2/foto 1.jpg",
-            "assets/img/proyectos/p2/foto 2.jpg",
-            "assets/img/proyectos/p2/foto 3.jpg",
-            "assets/img/proyectos/p2/boceto 1.jpg",
-            "assets/img/proyectos/p2/boceto 2.jpg",
-            "assets/img/proyectos/p2/boceto 3.jpg"
-        ],
-        "descripcion": "Una exploración artística y conceptual que fusiona el packaging con la ilustración tradicional. \n\nEl diseño de la etiqueta es una metáfora visual: la propia forma de la etiqueta evoca una copa de vino que se llena en el momento de servir. \n\nInspirado en el concepto orgánico de Vel, este proyecto de dibujo amplía la serie con etiquetas para vinos tinto, rosado y blanco. \n\nTécnica: Lápices de colores y lápices acuarelables, jugando con la transparencia y el degradado para lograr un acabado evocador, donde la uva se funde con el líquido."
+        "id": "bandcamp-valores",
+        "titulo": "VALORES",
+        "subtitulo": "La filosofía detrás del campamento base",
+        "categoria": "concepto",
+        "descripcion": "Nuestra propuesta de rediseño se fundamenta en tres pilares esenciales: el respeto por el trabajo del artista, la transparencia económica y la conexión humana entre creador y oyente.",
+        "textoSecundario": "Buscamos trasladar la calidez del formato físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
+        "imagen": "/img/valores-bandcamp.jpg"
     },
     {
         "id": 3,
