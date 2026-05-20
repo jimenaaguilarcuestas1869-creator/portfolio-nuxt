@@ -22,11 +22,35 @@ const opcionesMenu = [
   { id: 'web', nombre: 'Web' }
 ]
 
-// ---  SCROLL EN EL HOME ---
+// --- SCROLL EN EL HOME ---
 const isSidebarVisible = ref(false)
 
 const handleScroll = () => {
-  isSidebarVisible.value = window.scrollY >= window.innerHeight - 150
+  const scrollY = window.scrollY
+  const windowHeight = window.innerHeight
+
+  // 1. Controlar la visibilidad de la barra lateral (aparece tras pasar el Hero)
+  isSidebarVisible.value = scrollY >= windowHeight - 150
+
+  // 2. Controlar si llegamos a la sección de abajo (Contacto) mediante coordenadas reales 🎯
+  const seccionContacto = document.getElementById('contacto') || document.querySelector('.proyectos-section')
+  
+  if (seccionContacto) {
+    const rect = seccionContacto.getBoundingClientRect()
+    
+    // Si la sección de abajo ya ha entrado o está muy cerca de entrar
+    if (rect.top <= 450) {
+      if (filtroActivo.value !== null) {
+        filtroActivo.value = null
+      }
+      return 
+    }
+  }
+
+  // 3. Si volvemos arriba, se restaura la primera pestaña automáticamente
+  if (filtroActivo.value === null) {
+    filtroActivo.value = 'concepto'
+  }
 }
 
 onMounted(() => {
@@ -39,7 +63,7 @@ onUnmounted(() => {
 
 // --- FILTRADO DINÁMICO ---
 const proyectosFiltrados = computed(() => {
-  if (filtroActivo.value === 'concepto') return proyectos.value
+  if (filtroActivo.value === 'concepto' || filtroActivo.value === null) return proyectos.value
   return proyectos.value.filter(p => 
     p.categoria.toLowerCase() === filtroActivo.value.toLowerCase()
   )
@@ -50,10 +74,8 @@ const abrirModal = async (proyecto) => {
   proyectoSeleccionado.value = proyecto
   modalAbierto.value = true
 
-  // Esperamos a que Vue dibuje el modal en el HTML
   await nextTick()
 
-  // Animaciones de entrada estilizadas con GSAP
   const modalEl = document.getElementById('project-modal')
   gsap.fromTo(modalEl, { opacity: 0 }, { opacity: 1, duration: 0.4 })
   
@@ -86,7 +108,7 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       <div :class="['libreta-sidebar', { 'is-visible': isSidebarVisible }]">
         <div class="libreta-pestanas">
           <button 
-            v-for="(fase, index) in opcionesMenu" 
+            v-for="fase in opcionesMenu" 
             :key="fase.id"
             :class="['pestana-btn', { active: filtroActivo === fase.id }]"
             @click="filtroActivo = fase.id"
@@ -98,19 +120,16 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       
       <div class="libreta-cuerpo">
 
-        <div v-if="filtroActivo === 'concepto'" class="manual-content-display">
+        <div v-if="filtroActivo === 'concepto' || filtroActivo === null" class="manual-content-display">
           <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
-            
             <div class="manual-left">
               <h2 class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
             </div>
-            
             <div class="manual-right">
               <p class="manual-text">{{ proyecto.descripcion }}</p>
             </div>
           </div>
-          
         </div>
 
         <div v-else id="grid-proyectos" class="projects-grid">

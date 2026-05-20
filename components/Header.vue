@@ -27,9 +27,7 @@ const toggleMenu = () => {
 
       <nav class="nav-menu" :class="{ active: menuAbierto }">
         <ul>
-          <li><a href="#proyectos" @click="menuAbierto = false">Proyectos</a></li>
-          <li><a href="#sobre-mi" @click="menuAbierto = false">Sobre mí</a></li>
-          <li><a href="#contacto" @click="menuAbierto = false">Contacto</a></li>
+          <li><a href="#contacto" @click="menuAbierto = false">Sobre nosotros</a></li>
         </ul>
       </nav>
     </div>
