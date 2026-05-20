@@ -63,7 +63,7 @@ onUnmounted(() => {
 
 // --- FILTRADO DINÁMICO ---
 const proyectosFiltrados = computed(() => {
-  if (filtroActivo.value === 'concepto' || filtroActivo.value === null) return proyectos.value
+  if (filtroActivo.value === null) return proyectos.value
   return proyectos.value.filter(p => 
     p.categoria.toLowerCase() === filtroActivo.value.toLowerCase()
   )
