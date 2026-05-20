@@ -18,7 +18,7 @@ const opcionesMenu = [
   { id: 'nucleo', nombre: 'Núcleo' },
   { id: 'sistema', nombre: 'Sistema' },
   { id: 'recursos', nombre: 'Recursos' },
-  { id: 'audiovisuales', nombre: 'Aplicaciones' },
+  { id: 'aplicaciones', nombre: 'Aplicaciones' },
   { id: 'web', nombre: 'Web' }
 ]
 
@@ -120,11 +120,12 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       
       <div class="libreta-cuerpo">
 
-        <div v-if="filtroActivo === 'concepto' || filtroActivo === 'nucleo' || filtroActivo === 'sistema'|| filtroActivo === 'recursos'|| filtroActivo === null" class="manual-content-display">
+        <div v-if="filtroActivo === 'concepto' || filtroActivo === 'nucleo' || filtroActivo === 'sistema'|| filtroActivo === 'recursos'|| filtroActivo === 'aplicaciones'|| filtroActivo === 'web'|| filtroActivo === null" class="manual-content-display">
           <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
             <div class="manual-left">
               <h2 class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
+              <img v-if="proyecto.portada" :src="proyecto.portada" :alt="proyecto.titulo" class="manual-img">
             </div>
             <div class="manual-right">
               <p class="manual-text">{{ proyecto.descripcion }}</p>
