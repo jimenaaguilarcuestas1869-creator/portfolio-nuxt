@@ -37,6 +37,45 @@
         "imagen": "/img/concepto-base-estrategica.jpg"
     },
     {
+        "id": "bandcamp-logo-principal",
+        "titulo": "LOGO PRINCIPAL",
+        "subtitulo": "Construcción tipográfica neutral y sólida",
+        "categoria": "nucleo",
+        "descripcion": "El logotipo base del que se parte es puramente tipográfico y está realizado con la tipografía Netto Demo Bold. Se ha seleccionado como una sans-serif que brinda una base neutra pero con peso visual idóneo para equilibrarse ópticamente con el trazo de los isotipos. Además, se le aplica una reducción de tracking para reforzar visualmente las ideas de cercanía y conexión.",
+        "textoSecundario": "Se han desarrollado variantes horizontal y vertical; esta última divide el nombre en dos líneas, volviéndose muy compacta e ideal para llenar espacios cuadrados, cartelería o formatos específicos de uniformes y papelería.",
+        "portada": "/img/nucleo-logo-principal.jpg"
+    },
+    {
+        "id": "bandcamp-logos-secundarios",
+        "titulo": "LOGOS SECUNDARIOS",
+        "subtitulo": "Isotipos diferenciadores y adaptaciones al sistema",
+        "categoria": "nucleo",
+        "descripcion": "La marca cobra su verdadera dimensión flexible gracias al uso de variantes combinadas. Se define el Isotipo Diferenciador mediante tres mascotas vinculadas a los módulos geométricos base (círculo, cuadrado y línea ondeante) que se asocian de forma directa a cada tipo de usuario: Discográfica, Artista y Fan.",
+        "textoSecundario": "Estas variantes se usan de manera independiente en entornos digitales como avatares de perfil o acompañando al logo horizontal en el header de la web tras el inicio de sesión, personalizando al máximo la experiencia de navegación del usuario.",
+        "portada": "/img/nucleo-logos-secundarios.jpg"
+    },
+    {
+        "id": "bandcamp-color",
+        "titulo": "PALETA DE COLOR",
+        "subtitulo": "Esencia retro, contraste y estabilidad visual",
+        "categoria": "nucleo",
+        "descripcion": "La paleta cromática se inspira en el rebranding y la estética de los cartoons clásicos para transmitir cercanía y nostalgia amable sin perder la funcionalidad en entornos web. El Azul celeste (#1A73C1) actúa como color principal aportando confianza y estabilidad.",
+        "textoSecundario": "Se complementa con colores secundarios vibrantes: Rojo (#EE4B3C), Rosa (#FC7DA8), Verde (#1EA849) y Amarillo (#FFBC1A). Como soporte y base neutra que garantiza el equilibrio, el contraste y una legibilidad impecable, se establecen el Beige (#EEE6D5) y el Negro (#000000).",
+        "portada": "/img/nucleo-color.jpg"
+    },
+    {
+        "id": "bandcamp-tipografia",
+        "titulo": "TIPOGRAFÍA",
+        "subtitulo": "Jerarquía entre la expresividad cartoon y la claridad técnica",
+        "categoria": "nucleo",
+        "descripcion": "La tipografía principal para titulares de gran impacto se construye mediante la superposición de dos variantes: Kelsi (trazo superior negro) y Kelsi 1 (relleno de color). Esta combinación se inspira en el lenguaje de la ilustración clásica aportando dinamismo y un carácter marcadamente expresivo.",
+        "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
+        "portada": "/img/nucleo-tipografia.jpg"
+    },
+
+
+
+    {
         "id": 3,
         "titulo": "Packaging para Cata la lata",
         "categoria": "Packaging",
