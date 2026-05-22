@@ -119,6 +119,9 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       </div>
       
       <div class="libreta-cuerpo">
+        <h1 class="titulo-seccion" v-if="filtroActivo">
+          {{ opcionesMenu.find(fase => fase.id === filtroActivo)?.nombre }}
+        </h1>
 
         <div v-if="filtroActivo === 'concepto' || filtroActivo === 'nucleo' || filtroActivo === 'sistema'|| filtroActivo === 'recursos'|| filtroActivo === 'aplicaciones'|| filtroActivo === 'web'|| filtroActivo === null" class="manual-content-display">
           <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
@@ -206,6 +209,18 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
 </template>
 
 <style scoped>
+.titulo-seccion {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-bottom: 4px solid #3b82f6;
+  padding-bottom: 10px;
+  display: inline-block;
+}
 .modal-description {
   white-space: pre-line;
 }
