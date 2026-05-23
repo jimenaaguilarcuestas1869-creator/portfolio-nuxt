@@ -32,20 +32,18 @@ const handleScroll = () => {
   isSidebarVisible.value = scrollY >= windowHeight - 150
 }
 
-// --- FUNCIÓN DE FILTRADO CORREGIDA CON FIJACIÓN DE SCROLL ---
+// --- FUNCIÓN DE FILTRADO ---
 const cambiarFila = async (idFase) => {
   filtroActivo.value = idFase
   
-  // Forzamos un pequeño retraso para que el navegador recalcule el tamaño dinámico
   await nextTick()
   
-  // Buscamos la sección de proyectos y recolocamos el scroll de forma fija en su inicio
   const seccionProyectos = document.getElementById('proyectos')
   if (seccionProyectos) {
     const posicionSeccion = seccionProyectos.getBoundingClientRect().top + window.scrollY
     window.scrollTo({
-      top: posicionSeccion - 40, // Dejamos un pequeño margen superior estético
-      behavior: 'auto' // Evita rebotes raros que empujen la web hacia abajo
+      top: posicionSeccion - 40,
+      behavior: 'auto'
     })
   }
 }
@@ -109,17 +107,14 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
       </div>
       
       <div class="libreta-cuerpo">
-<<<<<<< HEAD
-        <div class="manual-content-display">
-          
-          <div v-if="proyectosFiltrados.length === 0" class="no-proyectos">
-            <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
-          </div>
-=======
         <h1 class="titulo-seccion" v-if="filtroActivo">
           {{ opcionesMenu.find(fase => fase.id === filtroActivo)?.nombre }}
         </h1>
->>>>>>> 281b4d53bde28c9c373799fd4cc23e5240c65f75
+
+        <div class="manual-content-display">
+          <div v-if="proyectosFiltrados.length === 0" class="no-proyectos">
+            <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
+          </div>
 
           <div 
             v-for="proyecto in proyectosFiltrados" 
@@ -144,10 +139,9 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
               <p class="manual-text-secundario" v-if="proyecto.textoSecundario">{{ proyecto.textoSecundario }}</p>
             </div>
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
 
     <div v-if="modalAbierto && proyectoSeleccionado" id="project-modal" class="modal" style="display: block;" @click.self="cerrarModal">
@@ -178,16 +172,15 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </template>
 
 <style scoped>
-<<<<<<< HEAD
 .proyectos-section {
-  min-height: 80vh; /* Asegura un tamaño mínimo para evitar saltos drásticos de scroll */
+  min-height: 80vh;
   position: relative;
 }
 .no-proyectos {
   padding: 60px 0;
   font-size: 1.5rem;
   color: #666;
-=======
+}
 .titulo-seccion {
   font-size: 3rem;
   font-weight: 800;
@@ -202,16 +195,19 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 }
 .modal-description {
   white-space: pre-line;
->>>>>>> 281b4d53bde28c9c373799fd4cc23e5240c65f75
 }
 .manual-layout {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 60px 0;
+  padding: 80px 0;
   color: #000000;
   cursor: pointer;
   transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb; /* Línea que separa los bloques que van hacia abajo */
+}
+.manual-layout:last-child {
+  border-bottom: none; /* Quita la línea divisoria en el último elemento */
 }
 .manual-layout:hover {
   transform: translateY(-2px);
@@ -235,7 +231,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 .manual-text {
   font-size: 1.1rem;
   line-height: 1.6;
-  white-space: pre-line; /* Respeta los saltos de línea \n del JSON */
+  white-space: pre-line;
 }
 .manual-text-secundario {
   font-size: 1.1rem;
