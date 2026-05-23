@@ -35,7 +35,7 @@
     "textoSecundario": "Esto se traduce en un sistema gráfico texturizado, un uso consciente del espacio y una dirección de arte que huye de la pulcritud digital corporativa. El objetivo es que la interfaz se 'sienta' viva, cercana y texturada, priorizando la escucha activa frente a la reproducción aleatoria.",
     "portada": "/img/baseestrategica_concepto.png"
   },
-   {
+  {
     "id": "bandcamp-logo-principal",
     "titulo": "LOGO PRINCIPAL",
     "subtitulo": "Construcción tipográfica neutral y sólida",
@@ -94,20 +94,19 @@
       { "hex": "#000000", "nombre": "Negro", "rgb": "0, 0, 0", "cmyk": "0, 0, 0, 100", "pantone": "Black 6 C" }
     ]
   },
-{
-  "id": "bandcamp-tipografia",
-  "titulo": "TIPOGRAFÍA",
-  "subtitulo": "Jerarquía entre la expresividad cartoon y la claridad técnica",
-  "categoria": "nucleo",
-  "descripcion": "La tipografía principal para titulares de gran impacto se construye mediante la superposición de dos variantes: Kelsi (trazo superior negro) y Kelsi 1 (relleno de color). Esta combinación se inspira en el lenguaje de la ilustración clásica aportando dinamismo y un carácter marcadamente expresivo.",
-  "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
-  "fuentes": [
-    "/img/nucleo/kelsi.svg",
-    "/img/nucleo/kelsi1.svg",
-    "/img/nucleo/satoshi.svg"
-  ]
-}
-,
+  {
+    "id": "bandcamp-tipografia",
+    "titulo": "TIPOGRAFÍA",
+    "subtitulo": "Jerarquía entre la expresividad cartoon y la claridad técnica",
+    "categoria": "nucleo",
+    "descripcion": "La tipografía principal para titulares de gran impacto se construye mediante la superposición de dos variantes: Kelsi (trazo superior negro) y Kelsi 1 (relleno de color). Esta combinación se inspira en el lenguaje de la ilustración clásica aportando dinamismo y un carácter maraquedamente expresivo.",
+    "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
+    "fuentes": [
+      "/img/nucleo/kelsi.svg",
+      "/img/nucleo/kelsi1.svg",
+      "/img/nucleo/satoshi.svg"
+    ]
+  },
   {
     "aplicaciones": true,
     "id": "bandcamp-aplicaciones-cartel-ilus-1",
@@ -275,5 +274,122 @@
       "/img/audiovisual1.mp4",
       "/img/audiovisuales2.mp4"
     ]
+  },
+  {
+    "id": "bandcamp-ui-colores",
+    "titulo": "SISTEMA DE COLOR UI",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "/img/UI/colores.svg",
+    "galeria": [
+      "/img/UI/colores.svg"
+    ],
+    "descripcion": "Definición y aplicación del color funcional dentro del sistema de diseño de la interfaz web. Los tonos se estructuran para delimitar jerarquías claras, estados interactivos y contrastes óptimos que garantizan la accesibilidad en la navegación.",
+    "textoSecundario": "Se prioriza el uso de fondos neutros (beige) con acentos cromáticos muy específicos para botones y alertas."
+  },
+  {
+    "id": "bandcamp-ui-espaciado",
+    "titulo": "ESPACIADO Y PADDING",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "/img/UI/espaciado_padding.svg",
+    "galeria": [
+      "/img/UI/espaciado_padding.svg",
+      "/img/UI/espacio_gap.svg"
+    ],
+    "titulosDinamicos": [
+      "PADDING",
+      "GAP"
+    ],
+    "descripciones": [
+      "Especificación de los márgenes internos (padding) que configuran la estructura y el aire visual de los bloques modulares de la interfaz.",
+      "Definición de las distancias y separaciones (gap) del sistema de rejilla para asegurar consistencia rítmica en la distribución del contenido."
+    ],
+    "descripcion": "Regulación de los sistemas de aire y distancias dentro de los contenedores de la interfaz web. Se establece una escala matemática estricta para paddings y gaps que unifica criterios, equilibra los pesos visuales y optimiza la lectura adaptativa en múltiples resoluciones de pantalla.",
+    "textoSecundario": "La consistencia en el espaciado es clave para trasladar el orden de la retícula analógica al comportamiento digital fluido."
+  },
+  {
+    "id": "bandcamp-ui-formularios",
+    "titulo": "FORMULARIOS Y REGISTRO",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "",
+    "galeria": [
+      "/img/UI/componentes_formulario.png",
+      "/img/UI/registro_formulario.png"
+    ],
+    "titulosDinamicos": [
+      "COMPONENTES",
+      "REGISTRO"
+    ],
+    "descripciones": [
+      "Diseño de campos de texto, inputs, checkboxes y estados interactivos aplicados al sistema de formularios.",
+      "Flujo visual y arquitectura de la experiencia de usuario para el proceso de registro y autenticación en la plataforma."
+    ],
+    "descripcion": "Definición atómica de las interfaces de entrada de datos. El sistema estandariza los inputs, selectores y layouts de registro web para optimizar la conversión de usuarios y garantizar la accesibilidad.",
+    "textoSecundario": "La validación visual inmediata reduce la fricción cognitiva en los puntos críticos de conversión."
+  },
+  {
+    "id": "bandcamp-ui-navegacion",
+    "titulo": "MENÚS Y FOOTER",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "",
+    "galeria": [
+      "/img/UI/menus.svg",
+      "/img/UI/footer.svg"
+    ],
+    "titulosDinamicos": [
+      "MENÚS",
+      "FOOTER"
+    ],
+    "descripciones": [
+      "Estructura jerárquica de menús y componentes de navegación desplegables adaptativos.",
+      "Anatomía y distribución de enlaces del pie de página para el cierre consistente de la experiencia de navegación."
+    ],
+    "descripcion": "Sistemas modulares de navegación que articulan el árbol web de la plataforma. Configuración de barras superiores interactivos y bloques de cierre informativos bajo criterios responsivos estrictos.",
+    "textoSecundario": "Una navegación consistente actúa como el mapa invisible que guía el flujo del usuario a través del ecosistema."
+  },
+  {
+    "id": "bandcamp-ui-estilos-visuales",
+    "titulo": "SOMBRAS Y LÍNEAS DE TRAZO",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "",
+    "galeria": [
+      "/img/UI/sombras.svg",
+      "/img/UI/trazo.svg"
+    ],
+    "titulosDinamicos": [
+      "SOMBRAS",
+      "TRAZO"
+    ],
+    "descripciones": [
+      "Definición matemática de elevaciones y sombras difusas para jerarquizar capas en el espacio de la interfaz.",
+      "Regulación de grosores y comportamientos vectoriales para las líneas divisorias, bordes y contornos interactivos."
+    ],
+    "descripcion": "Establecimiento de las pautas estilísticas estructurales que delimitan los contenedores de información. Las sombras aportan profundidad tridimensional simulada mientras que los trazos asientan el orden reticular analógico.",
+    "textoSecundario": "Los microdetalles visuales construyen la percepción inconsciente de solidez y profesionalismo técnico."
+  },
+  {
+    "id": "bandcamp-ui-detalles-interfaz",
+    "titulo": "ESQUINAS E ICONOGRAFÍA",
+    "subtitulo": "Componentes de interfaz",
+    "categoria": "web",
+    "portada": "",
+    "galeria": [
+      "/img/UI/esquinas.svg",
+      "/img/UI/iconos.svg"
+    ],
+    "titulosDinamicos": [
+      "ESQUINAS",
+      "ICONOS"
+    ],
+    "descripciones": [
+      "Especificación de los radios de curvatura (border-radius) para suavizar las esquinas de los elementos modulares.",
+      "Catálogo y grilla de construcción para los elementos iconográficos del sistema de diseño."
+    ],
+    "descripcion": "Consolidación de los últimos detalles atómicos del sistema visual. La homogeneidad de las esquinas en los botones e inputs, sumada al rigor formal de la iconografía de UI, asienta la cohesión global de la marca en la web.",
+    "textoSecundario": "El radio de curvatura y el peso visual iconográfico definen el verdadero temperamento geométrico de una interfaz."
   }
 ]
