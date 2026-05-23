@@ -196,18 +196,23 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 .modal-description {
   white-space: pre-line;
 }
+
+.modal, .modal-content {
+  background-color: #EEE6D5 !important;
+}
 .manual-layout {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 80px 0;
+  padding: 80px 0; /* Un poco más de espacio arriba y abajo para que respire */
   color: #000000;
   cursor: pointer;
   transition: transform 0.2s ease;
-  border-bottom: 1px solid #e5e7eb; /* Línea que separa los bloques que van hacia abajo */
+  border-bottom: 1px solid #e5e7eb; /* Esta línea separará un bloque de otro hacia abajo */
 }
+
 .manual-layout:last-child {
-  border-bottom: none; /* Quita la línea divisoria en el último elemento */
+  border-bottom: none; /* Evita que el último bloque de abajo del todo tenga línea */
 }
 .manual-layout:hover {
   transform: translateY(-2px);
@@ -255,5 +260,25 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   .manual-left {
     max-width: 50%;
   }
+}
+
+/* --- AJUSTE PARA EL CARRUSEL WEB --- */
+.swiper-container-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+}
+.swiper-container {
+  max-height: 65vh;
+  background-color: #EEE6D5;
+  border-radius: 8px;
+}
+.swiper-container swiper-slide img {
+  width: 100% !important;
+  height: 65vh !important;
+  object-fit: contain !important;
+  margin: 0 auto;
+  display: block;
 }
 </style>

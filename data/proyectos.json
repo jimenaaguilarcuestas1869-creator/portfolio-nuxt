@@ -14,7 +14,7 @@
     "subtitulo": "La filosofía detrás del campamento base",
     "categoria": "concepto",
     "descripcion": "Nuestra propuesta de rediseño se fundamenta en tres pilares esenciales: el respeto por el trabajo del artista, la transparencia económica y la conexión humana entre creador y oyente.",
-    "textoSecundario": "Buscamos trasladar la calidez del formato físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
+    "textoSecundario": "Buscamos trasladar la calidez del format físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
     "portada": "/img/valores-bandcamp.jpg"
   },
   {
@@ -59,7 +59,7 @@
     "subtitulo": "Esencia retro, contraste y estabilidad visual",
     "categoria": "nucleo",
     "descripcion": "La paleta cromática se inspira en el rebranding y la estética de los cartoons clásicos para transmitir cercanía y nostalgia amable sin perder la funcionalidad en entornos web. El Azul celeste (#1A73C1) actúa como color principal aportando confianza y estabilidad.",
-    "textoSecundario": "Se complementa con colores secundarios vibrantes: Rojo (#EE4B3C), Rosa (#FC7DA8), Verde (#1EA849) y Amarillo (#FFBC1A). Como soporte y base neutra que garantiza el equilibrio, el contraste y una legibilidad impecable, se establecen el Beige (#EEE6D5) and el Negro (#000000).",
+    "textoSecundario": "Se complementa con colores secundarios vibrantes: Rojo (#EE4B3C), Rosa (#FC7DA8), Verde (#1EA849) and Amarillo (#FFBC1A). Como soporte y base neutra que garantiza el equilibrio, el contraste y una legibilidad impecable, se establecen el Beige (#EEE6D5) y el Negro (#000000).",
     "portada": "/img/nucleo-color.jpg"
   },
   {
@@ -96,10 +96,35 @@
     "titulo": "Componentes de Interfaz UI",
     "subtitulo": "Sistema de diseño web",
     "categoria": "Web",
-    "portada": "assets/img/proyectos/botones_web_foto_bandcamp.png",
+    "portada": "/img/botones_web_foto_bandcamp.png",
     "galeria": [
-      "assets/img/proyectos/botones_web_foto_bandcamp.png"
+      "/img/botones_web_foto_bandcamp.png"
     ],
-    "descripcion": "Diseño del sistema de botones y variantes de interacción para la plataforma web de Bandcamp. Incluye la definición de estados default, hover y active."
+    "descripcion": "Diseño del sistema de botones y variantes de interacción para la plataforma web de Bandcamp. Incluye la definición de estados default, hover y active.",
+    "textoSecundario": ""
+  },
+  {
+    "id": 12,
+    "titulo": "UI KIT",
+    "subtitulo": "",
+    "categoria": "Web",
+    "portada": "/img/cards_web.png",
+    "galeria": [
+      "/img/cards_1_web.png",
+      "/img/cards_2_web.png",
+      "/img/cards_3_web.png"
+    ],
+    "descripcion": "Las cards se plantean como contenedores modulares y flexibles diseñados para organizar contenido como lanzamientos, eventos y productos de forma clara. Su estructura mantiene una jerarquía visual estricta entre imágenes y acciones, facilitando una lectura rápida e intuitiva. \n\nEl sistema se adapta perfectamente a desktop y móvil mediante pequeños ajustes de espaciado, tipografía y proporciones, garantizando la coherencia visual y una usabilidad impecable en cualquier dispositivo.",
+    "textoSecundario": ""
+  },
+  {
+    "id": 13,
+    "titulo": "TERCERA SECCIÓN WEB",
+    "subtitulo": "Subtítulo del tercer bloque",
+    "categoria": "Web",
+    "portada": "/img/botones_web_foto_bandcamp.png",
+    "galeria": [],
+    "descripcion": "Aquí va la descripción principal para este tercer bloque de la página web.",
+    "textoSecundario": "Texto secundario o complementario para el tercer bloque."
   }
 ]
