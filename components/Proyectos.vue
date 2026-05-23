@@ -3,6 +3,7 @@ import { ref, computed, nextTick, onMounted, onUnmounted } from 'vue'
 import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
+import BotonUI from '~/components/BotonUI.vue'
 
 register()
 
@@ -11,6 +12,7 @@ const proyectos = ref(listaProyectos)
 const filtroActivo = ref('concepto')
 const modalAbierto = ref(false)
 const proyectoSeleccionado = ref(null)
+const slideActivo = ref(0)
 
 const opcionesMenu = [
   { id: 'concepto', nombre: 'Concepto' },
@@ -56,22 +58,33 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-// --- FILTRADO DINÁMICO ---
+// --- FILTRADO DINÁMICO LIMPIO Y FIABLE ---
 const proyectosFiltrados = computed(() => {
   if (filtroActivo.value === null) return proyectos.value
-  return proyectos.value.filter(p => 
-    p.categoria.toLowerCase() === filtroActivo.value.toLowerCase()
-  )
+  
+  // Filtra de manera estricta comparando el campo 'categoria' del JSON con la pestaña activa
+  return proyectos.value.filter(p => {
+    if (!p.categoria) return false
+    return p.categoria.toString().trim().toLowerCase() === filtroActivo.value.toString().trim().toLowerCase()
+  })
 })
 
 // --- MODAL DE MULTIMEDIA ---
 const abrirModal = async (proyecto) => {
+  slideActivo.value = 0
   proyectoSeleccionado.value = proyecto
   modalAbierto.value = true
 
   await nextTick()
   const modalEl = document.getElementById('project-modal')
   gsap.fromTo(modalEl, { opacity: 0 }, { opacity: 1, duration: 0.3 })
+
+  const swiperEl = document.querySelector('swiper-container')
+  if (swiperEl) {
+    swiperEl.addEventListener('swiperslidechange', (e) => {
+      slideActivo.value = e.detail[0].activeIndex
+    })
+  }
 }
 
 const cerrarModal = () => {
@@ -82,11 +95,20 @@ const cerrarModal = () => {
     onComplete: () => {
       modalAbierto.value = false
       proyectoSeleccionado.value = null
+      slideActivo.value = 0
     }
   })
 }
 
-const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
+// Helper para desactivar clics en elementos estáticos (Concepto, Paletas y Fuentes en el Layout)
+const esEstatico = (proyecto) => {
+  const categoria = String(proyecto.categoria || '').toLowerCase()
+  return (proyecto.colores && proyecto.colores.length > 0) ||
+         (proyecto.fuentes && proyecto.fuentes.length > 0) ||
+         categoria === 'concepto'
+}
+
+const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : false
 </script>
 
 <template>
@@ -116,21 +138,59 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
             <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
           </div>
 
-            <div 
-              v-for="proyecto in proyectosFiltrados" 
-               :key="proyecto.id" 
-               :class="[
-               proyecto.aplicaciones ? 'aplicaciones-layout' : 'manual-layout', 
-               { 'sin-click': proyecto.categoria.toLowerCase() === 'concepto' }
-                   ]" 
-                @click="proyecto.categoria.toLowerCase() !== 'concepto' ? abrirModal(proyecto) : null"
-               >
+          <div 
+            v-for="proyecto in proyectosFiltrados" 
+            :key="proyecto.id" 
+            :class="[
+              proyecto.aplicaciones ? 'aplicaciones-layout' : 'manual-layout', 
+              { 'sin-click': esEstatico(proyecto) }
+            ]" 
+            @click="!esEstatico(proyecto) ? abrirModal(proyecto) : null"
+          >
           
             <div class="manual-left">
               <h2 v-if="proyecto.titulo" class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
 
-              <div v-if="proyecto.titulo.toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
+              <div v-if="proyecto.colores && proyecto.colores.length > 0" class="contenedor-paleta-manual" @click.stop>
+                <div
+                  v-for="(color, cIdx) in proyecto.colores"
+                  :key="cIdx"
+                  class="tarjeta-color-manual"
+                >
+                  <div class="bloque-muestra-color" :style="{ backgroundColor: color.hex }"></div>
+                  <div class="detalles-color-manual">
+                    <span class="txt-color-nombre">{{ color.nombre }}</span>
+                    <span class="txt-color-hex">{{ color.hex }}</span>
+                    <span class="txt-color-meta">RGB: {{ color.rgb }}</span>
+                    <span class="txt-color-meta">CMYK: {{ color.cmyk }}</span>
+                    <span v-if="color.pantone" class="txt-color-meta">PMS: {{ color.pantone }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div v-else-if="proyecto.fuentes && proyecto.fuentes.length > 0" class="contenedor-tipo-imagenes" @click.stop>
+                <img
+                  v-for="(rutaSvg, fIdx) in proyecto.fuentes"
+                  :key="fIdx"
+                  :src="rutaSvg"
+                  :alt="`Muestra de fuente ${fIdx + 1}`"
+                  class="img-tipo-muestra"
+                />
+              </div>
+
+              <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && !String(proyecto.titulo).toUpperCase().includes('SECUNDARIO') && filtroActivo !== 'web' && filtroActivo !== 'recursos'" class="contenedor-logos-marca" @click.stop>
+                <div v-if="proyecto.galeria[0]" class="logo-box-placeholder">
+                  <span class="tag-logo">Horizontal</span>
+                  <img :src="proyecto.galeria[0]" alt="Logo horizontal" class="img-marca-preview" />
+                </div>
+                <div v-if="proyecto.galeria[1]" class="logo-box-placeholder">
+                  <span class="tag-logo">En Vertical</span>
+                  <img :src="proyecto.galeria[1]" alt="Logo vertical" class="img-marca-preview" />
+                </div>
+              </div>
+
+              <div v-else-if="String(proyecto.titulo).toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
                 <div class="fila-botones"><BotonUI color="azul" variante="sin-icono" texto="Botón" /><BotonUI color="azul" variante="icono-izq" texto="Botón" /><BotonUI color="azul" variante="icono-der" texto="Botón" /><BotonUI color="azul" variante="dos-iconos" texto="Botón" /><BotonUI color="azul" variante="solo-icono" /></div>
                 <div class="fila-botones"><BotonUI color="verde" variante="sin-icono" texto="Botón" /><BotonUI color="verde" variante="icono-izq" texto="Botón" /><BotonUI color="verde" variante="icono-der" texto="Botón" /><BotonUI color="verde" variante="dos-iconos" texto="Botón" /><BotonUI color="verde" variante="solo-icono" /></div>
                 <div class="fila-botones"><BotonUI color="amarillo" variante="sin-icono" texto="Botón" /><BotonUI color="amarillo" variante="icono-izq" texto="Botón" /><BotonUI color="amarillo" variante="icono-der" texto="Botón" /><BotonUI color="amarillo" variante="dos-iconos" texto="Botón" /><BotonUI color="amarillo" variante="solo-icono" /></div>
@@ -140,9 +200,9 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
               </div>
               
               <img 
-                v-if="proyecto.portada" 
+                v-else-if="proyecto.portada" 
                 :src="proyecto.portada.startsWith('assets/') ? proyecto.portada.replace('assets/', '/') : proyecto.portada" 
-                :alt="proyecto.titulo || 'Imagen de aplicación'" 
+                :alt="proyecto.titulo || 'Imagen del proyecto'" 
                 class="manual-img"
               >
             </div>
@@ -175,9 +235,21 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
         </div>
 
         <div class="modal-text">
-          <h2 v-if="proyectoSeleccionado.titulo">{{ proyectoSeleccionado.titulo }}</h2>
+          <h2 v-if="proyectoSeleccionado.titulosDinamicos && proyectoSeleccionado.titulosDinamicos[slideActivo]">
+            {{ proyectoSeleccionado.titulosDinamicos[slideActivo] }}
+          </h2>
+          <h2 v-else-if="proyectoSeleccionado.titulo">
+            {{ proyectoSeleccionado.titulo }}
+          </h2>
+          
           <p class="category">{{ proyectoSeleccionado.categoria }}</p>
-          <p class="modal-description" v-if="proyectoSeleccionado.descripcion">{{ proyectoSeleccionado.descripcion }}</p>
+          
+          <p class="modal-description" v-if="proyectoSeleccionado.descripciones && proyectoSeleccionado.descripciones[slideActivo]">
+            {{ proyectoSeleccionado.descripciones[slideActivo] }}
+          </p>
+          <p class="modal-description" v-else-if="proyectoSeleccionado.descripcion">
+            {{ proyectoSeleccionado.descripcion }}
+          </p>
         </div>
       </div>
     </div>
@@ -185,35 +257,102 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </template>
 
 <style scoped>
-
-.manual-layout {
+/* --- CONTENEDORES DE CONTENIDO INTERNO --- */
+.contenedor-tipo-imagenes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.img-tipo-muestra {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.contenedor-paleta-manual {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.tarjeta-color-manual {
+  background: #f7f4ed;
+  border: 1px solid #dcd7ca;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+.bloque-muestra-color {
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #dcd7ca;
+}
+.detalles-color-manual {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.txt-color-nombre {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #000;
+}
+.txt-color-hex {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  font-family: monospace;
+}
+.txt-color-meta {
+  font-size: 0.7rem;
+  color: #777;
+  font-family: monospace;
+}
+.contenedor-logos-marca {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 40px 0;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  border-bottom: 1px solid #e5e7eb;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
 }
-
-.manual-right {
-  align-self: center;  
-  max-width: 500px;
-  text-align: left;
-}
-
-.aplicaciones-layout {
+.logo-box-placeholder {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 10px 0;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 20px 0;
+  min-height: 180px;
+}
+.tag-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #3b82f6;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+.img-marca-preview {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
 }
 
+/* --- INTERFAZ DE BOTONES UI --- */
 .contenedor-botones-ui {
   display: flex;
   flex-direction: column;
@@ -227,6 +366,44 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   flex-wrap: wrap;
   gap: 15px;
 }
+
+/* --- ESTRUCTURAS DE LAYOUT GLOBALES --- */
+.manual-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 0;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb;
+}
+.manual-layout:last-child {
+  border-bottom: none;
+}
+.manual-layout:hover, .aplicaciones-layout:hover {
+  transform: translateY(-2px);
+}
+.aplicaciones-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb;
+}
+.manual-left {
+  width: 100%;
+}
+.manual-right {
+  align-self: center;  
+  max-width: 500px;
+  text-align: left;
+}
+
+/* --- ESTILOS DE ELEMENTOS INDIVIDUALES --- */
 .proyectos-section {
   min-height: 80vh;
   position: relative;
@@ -248,31 +425,6 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   padding-bottom: 10px;
   display: inline-block;
 }
-.modal-description {
-  white-space: pre-line;
-}
-
-
-.modal, .modal-content {
-  background-color: #EEE6D5 !important;
-}
-.manual-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 80px 0; /* Un poco más de espacio arriba y abajo para que respire */
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  border-bottom: 1px solid #e5e7eb; /* Esta línea separará un bloque de otro hacia abajo */
-}
-
-.manual-layout:last-child {
-  border-bottom: none; /* Evita que el último bloque de abajo del todo tenga línea */
-}
-.manual-layout:hover {
-  transform: translateY(-2px);
-}
 .manual-title {
   font-size: 4rem;
   font-weight: 800;
@@ -284,7 +436,6 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   color: #3b82f6;
   margin-bottom: 20px;
 }
-
 .manual-text {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -304,29 +455,21 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-@media (min-width: 768px) {
-  .manual-layout {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .manual-left {
-    max-width: 50%;
-  }
-
-  @media (min-width: 768px) {
-  /* Añadimos tu nueva clase aquí separada por una coma */
-  .manual-layout, .aplicaciones-layout {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .manual-left {
-    max-width: 50%;
-  }
+/* MODOS ESTÁTICOS */
+.sin-click {
+  cursor: default !important;
+}
+.sin-click:hover {
+  transform: none !important;
 }
 
+/* --- MODAL Y CARRUSEL MULTIMEDIA --- */
+.modal, .modal-content {
+  background-color: #EEE6D5 !important;
 }
-
-/* --- AJUSTE PARA EL CARRUSEL WEB --- */
+.modal-description {
+  white-space: pre-line;
+}
 .swiper-container-wrapper {
   width: 100%;
   max-width: 900px;
@@ -344,5 +487,26 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   object-fit: contain !important;
   margin: 0 auto;
   display: block;
+}
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- MEDIA QUERIES DISPOSITIVOS GRANDES --- */
+@media (min-width: 768px) {
+  .manual-layout, .aplicaciones-layout {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .manual-left {
+    max-width: 50%;
+  }
+  .manual-right {
+    margin-top: 140px;
+    align-self: flex-start;
+  }
 }
 </style>

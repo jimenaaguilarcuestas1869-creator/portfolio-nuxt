@@ -5,7 +5,7 @@
     "subtitulo": "Un ecosistema de apoyo directo entre creadores y oyentes",
     "categoria": "concepto",
     "descripcion": "Es un ecosistema de apoyo directo entre creadores y oyentes. \n\nA diferencia de los grandes servicios de streaming, Bandcamp se erige como un campamento base (Camp) para artistas independientes, donde la comunidad no solo consume música, sino que invierte en ella a través de formatos físicos y merchandising, devolviendo el valor humano y económico a la industria musical.",
-    "textoSecundario": "Nuestra propuesta de rediseño se centra en recuperar la 'imperfección' y la humanidad de los medios analógicos como el vinilo y el cassette, trasladando esa experiencia táctil y física al entorno de la interfaz digital.",
+    "textoSecundario": "Nuestra propuesta de rediseño se centra en recuperar la 'imperfección' y la humanidad de los medios analógicos como el vinilo y el cassette, trasladando esa experience táctil y física al entorno de la interfaz digital.",
     "portada": "/img/quienessomos_concepto.png"
   },
   {
@@ -14,7 +14,7 @@
     "subtitulo": "La filosofía detrás del campamento base",
     "categoria": "concepto",
     "descripcion": "Nuestra propuesta de rediseño se fundamenta en tres pilares esenciales: el respeto por el trabajo del artista, la transparencia económica y la conexión humana entre creador y oyente.",
-    "textoSecundario": "Buscamos trasladar la calidez del format físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
+    "textoSecundario": "Buscamos trasladar la calidez del formato físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
     "portada": "/img/valores_concepto.png"
   },
   {
@@ -35,48 +35,82 @@
     "textoSecundario": "Esto se traduce en un sistema gráfico texturizado, un uso consciente del espacio y una dirección de arte que huye de la pulcritud digital corporativa. El objetivo es que la interfaz se 'sienta' viva, cercana y texturada, priorizando la escucha activa frente a la reproducción aleatoria.",
     "portada": "/img/baseestrategica_concepto.png"
   },
-  {
+   {
     "id": "bandcamp-logo-principal",
     "titulo": "LOGO PRINCIPAL",
     "subtitulo": "Construcción tipográfica neutral y sólida",
-    "categoria": "nucleo",
     "descripcion": "El logotipo base del que se parte es puramente tipográfico y está realizado con la tipografía Netto Demo Bold. Se ha seleccionado como una sans-serif que brinda una base neutra pero con peso visual idóneo para equilibrarse ópticamente con el trazo de los isotipos. Además, se le aplica una reducción de tracking para reforzar visualmente las ideas de cercanía y conexión.",
     "textoSecundario": "Se han desarrollado variantes horizontal y vertical; esta última divide el nombre en dos líneas, volviéndose muy compacta e ideal para llenar espacios cuadrados, cartelería o formatos específicos de uniformes y papelería.",
-    "portada": "/img/nucleo-logo-principal.jpg"
+    "categoria": "nucleo",
+    "portada": "",
+    "galeria": [
+      "/img/nucleo/logo1.png",
+      "/img/nucleo/logo2.png",
+      "/img/nucleo/logo4.png",
+      "/img/nucleo/logo3.png"
+    ],
+    "titulosDinamicos": [
+      "LOGO HORIZONTAL",
+      "ÁREA DE PROTECCIÓN HORIZONTAL",
+      "LOGO VERTICAL",
+      "ÁREA DE PROTECCIÓN VERTICAL"
+    ],
+    "descripciones": [
+      "Para el logo de Bandcamp se ha optado por tener diferentes versiones para sus diversas aplicaiones. Por un lado está el logo tipográfico base del cual se parte, este está realizado con la tipografía Netto Demo, ya que es una tipografía sans serif que brinda una base neutra sobro la cual se podrá construir el logo flexible, pues el isotipo variable es el que se lleva toda la personalidad, por ello se necesitaba una tipo más neutral. Además se la empléa en su peso \"bold\", pues así se adapta el peso óptico al del trazo del isotipo.",
+      "El área de protección del logotipo se ha diseñado para garantizar su máxima legibilidad e impacto visual, evitando que elementos ajenos interfieran con la marca. Este espacio de exclusión se calcula de forma proporcional utilizando como unidad de medida el ancho del asta (o palo) de la letra \"p\", estableciendo un margen obligatorio a su alrededor que nunca debe ser invadido por textos, imágenes u otros gráficos.",
+      "Esta variante del logotipo (vertical), al tener el texto dividido en dos líneas, se vuelve mucho más compacta y \"llena\" mejor espacios verticales o cuadrados. Es ideal para carteles donde el logo va en una esquina o para aplicaciones corporativas como tarjetas de presentación y uniformes.",
+      "Para la versión secundaria (en dos líneas) del logotipo, se aplica el mismo criterio de legibilidad: El área de protección de la versión secundaria garantiza su correcta visualización e independencia gráfica frente a otros elementos. Al igual que en la versión principal, este espacio de exclusión se determina de forma proporcional utilizando como unidad de medida el ancho del asta de la letra \"p\", asegurando un margen periférico limpio que protege la integridad y el equilibrio de la marca en formatos más compactos."
+    ]
   },
   {
     "id": "bandcamp-logos-secundarios",
     "titulo": "LOGOS SECUNDARIOS",
     "subtitulo": "Isotipos diferenciadores y adaptaciones al sistema",
     "categoria": "nucleo",
+    "portada": "/img/nucleo/secundario1.svg",
+    "galeria": [
+      "/img/nucleo/secundario1.svg",
+      "/img/nucleo/secundario2.svg",
+      "/img/nucleo/secundario3.svg",
+      "/img/nucleo/isotipo.svg"
+    ],
     "descripcion": "La marca cobra su verdadera dimensión flexible gracias al uso de variantes combinadas. Se define el Isotipo Diferenciador mediante tres mascotas vinculadas a los módulos geométricos base (círculo, cuadrado y línea ondeante) que se asocian de forma directa a cada tipo de usuario: Discográfica, Artista y Fan.",
-    "textoSecundario": "Estas variantes se usan de manera independiente en entornos digitales como avatares de perfil o acompañando al logo horizontal en el header de la web tras el inicio de sesión, personalizando al máximo la experiencia de navegación del usuario.",
-    "portada": "/img/nucleo-logos-secundarios.jpg"
+    "textoSecundario": "Estas variantes se usan de manera independiente en entornos digitales como avatares de perfil o acompañando al logo horizontal en el header de la web tras el inicio de sesión, personalizando al máximo la experiencia de navegación del usuario."
   },
   {
     "id": "bandcamp-color",
     "titulo": "PALETA DE COLOR",
     "subtitulo": "Esencia retro, contraste y estabilidad visual",
     "categoria": "nucleo",
-    "descripcion": "La paleta cromática se inspira en el rebranding y la estética de los cartoons clásicos para transmitir cercanía y nostalgia amable sin perder la funcionalidad en entornos web. El Azul celeste (#1A73C1) actúa como color principal aportando confianza y estabilidad.",
-    "textoSecundario": "Se complementa con colores secundarios vibrantes: Rojo (#EE4B3C), Rosa (#FC7DA8), Verde (#1EA849) and Amarillo (#FFBC1A). Como soporte y base neutra que garantiza el equilibrio, el contraste y una legibilidad impecable, se establecen el Beige (#EEE6D5) y el Negro (#000000).",
-    "portada": "/img/nucleo-color.jpg"
+    "descripcion": "La paleta de colores se basa en el rebranding y la estética de los cartoons clásicos para transmitir cercanía y nostalgia sin perder funcionalidad. ",
+    "textoSecundario": "El azul celeste aporta confianza y estabilidad. El rojo y el rosa, calidez y conexión emocional; el verde, frescura y diversidad; y el amarillo, un toque retro y optimista. El beige y el negro actúan como base neutra, asegurando equilibrio, contraste y legibilidad. El fondo beige ha sido elegido para servir como fondo neutro, harmonizando con todos los demás colores más llamativos que se sobreponen. No se deben usar los tonos más llamativos como fondo.",
+    "colores": [
+      { "hex": "#1A73C1", "nombre": "Azul Celeste", "rgb": "26, 115, 196", "cmyk": "87, 40, 0, 24" },
+      { "hex": "#EE4B3C", "nombre": "Rojo", "rgb": "238, 75, 60", "cmyk": "0, 69, 75, 7", "pantone": "2027 C" },
+      { "hex": "#FFBC1A", "nombre": "Amarillo", "rgb": "255, 188, 26", "cmyk": "0, 26, 90, 0", "pantone": "1235 C" },
+      { "hex": "#FC7DA8", "nombre": "Rosa", "rgb": "252, 125, 168", "cmyk": "0, 50, 33, 1", "pantone": "6051 C" },
+      { "hex": "#1EA849", "nombre": "Verde", "rgb": "30, 168, 73", "cmyk": "82, 0, 56, 34", "pantone": "2252 C" },
+      { "hex": "#EEE6D5", "nombre": "Beige", "rgb": "238, 230, 213", "cmyk": "0, 3, 11, 7", "pantone": "Cloud Dancer" },
+      { "hex": "#000000", "nombre": "Negro", "rgb": "0, 0, 0", "cmyk": "0, 0, 0, 100", "pantone": "Black 6 C" }
+    ]
   },
-  {
-    "id": "bandcamp-tipografia",
-    "titulo": "TIPOGRAFÍA",
-    "subtitulo": "Jerarquía entre la expresividad cartoon y la claridad técnica",
-    "categoria": "nucleo",
-    "descripcion": "La tipografía principal para titulares de gran impacto se construye mediante la superposición de dos variantes: Kelsi (trazo superior negro) y Kelsi 1 (relleno de color). Esta combinación se inspira en el lenguaje de la ilustración clásica aportando dinamismo y un carácter marcadamente expresivo.",
-    "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
-    "portada": "/img/nucleo-tipografia.jpg"
-  },
-
-
-
+{
+  "id": "bandcamp-tipografia",
+  "titulo": "TIPOGRAFÍA",
+  "subtitulo": "Jerarquía entre la expresividad cartoon y la claridad técnica",
+  "categoria": "nucleo",
+  "descripcion": "La tipografía principal para titulares de gran impacto se construye mediante la superposición de dos variantes: Kelsi (trazo superior negro) y Kelsi 1 (relleno de color). Esta combinación se inspira en el lenguaje de la ilustración clásica aportando dinamismo y un carácter marcadamente expresivo.",
+  "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
+  "fuentes": [
+    "/img/nucleo/kelsi.svg",
+    "/img/nucleo/kelsi1.svg",
+    "/img/nucleo/satoshi.svg"
+  ]
+}
+,
   {
     "aplicaciones": true,
-    "id": "bandcamp-aplicaciones-cartel-ilus",
+    "id": "bandcamp-aplicaciones-cartel-ilus-1",
     "titulo": "CARTELERÍA",
     "subtitulo": "Cartel basado en ilustración",
     "categoria": "aplicaciones",
@@ -87,20 +121,19 @@
   },
   {
     "aplicaciones": true,
-    "id": "bandcamp-aplicaciones-cartel-ilus",
-    "titulo": "",
-    "subtitulo": "",
+    "id": "bandcamp-aplicaciones-cartel-ilus-2",
+    "titulo": "BANDERILLAS PUBLICITARIAS",
+    "subtitulo": "Publicidad exterior",
     "categoria": "aplicaciones",
     "descripcion": "Cartel basado en ilustración para medios verticales (banderillas)",
     "textoSecundario": "",
     "portada": "/img/Free Single Banner Mockup2.png",
     "galeria": []
   },
-
   {
     "aplicaciones": true,
-    "id": "bandcamp-aplicaciones-cartel-fot",
-    "titulo": "",
+    "id": "bandcamp-aplicaciones-cartel-fot-1",
+    "titulo": "VALLAS PUBLICITARIAS",
     "subtitulo": "Cartel fotográfico",
     "categoria": "aplicaciones",
     "descripcion": "Gran banner promocional para carreteras",
@@ -110,8 +143,8 @@
   },
   {
     "aplicaciones": true,
-    "id": "bandcamp-aplicaciones-cartel-fot",
-    "titulo": "",
+    "id": "bandcamp-aplicaciones-cartel-fot-2",
+    "titulo": "MUPIS URBANOS",
     "subtitulo": "Cartel fotográfico",
     "categoria": "aplicaciones",
     "descripcion": "Carteles para el metro y paneles publicitarios urbanos",
@@ -121,59 +154,64 @@
   },
   {
     "aplicaciones": true,
-    "id": "bandcamp-aplicaciones-cartel-ilus",
-    "titulo": "PAPELERÍA",
-    "subtitulo": "",
+    "id": "bandcamp-aplicaciones-papeleria",
+    "titulo": "PAPELERÍA CORPORATIVA",
+    "subtitulo": "Identidad física",
     "categoria": "aplicaciones",
-    "descripcion": "Contratos en papel y targetas ",
+    "descripcion": "Contratos en papel y tarjetas comerciales con los acabados y texturas del sistema.",
     "textoSecundario": "",
     "portada": "/img/Free Small Stationery Set Mockup.png",
     "galeria": []
   },
-  
-
-
-
   {
-    "id": 11,
+    "id": "bandcamp-interfaz-ui",
     "titulo": "Componentes de Interfaz UI",
     "subtitulo": "Sistema de diseño web",
-    "categoria": "Web",
-
+    "categoria": "web",
     "descripcion": "Diseño del sistema de botones y variantes de interacción para la plataforma web de Bandcamp. Incluye la definición de estados default, hover y active.",
     "textoSecundario": ""
   },
   {
-    "id": 12,
+    "id": "bandcamp-ui-kit",
     "titulo": "UI KIT",
-    "subtitulo": "",
-    "categoria": "Web",
+    "subtitulo": "Componentes modulares",
+    "categoria": "web",
     "portada": "/img/cards_web.png",
     "galeria": [
       "/img/cards_1_web.png",
       "/img/cards_2_web.png",
       "/img/cards_3_web.png"
     ],
+    "titulosDinamicos": [
+      "Diseño de Cards para Desktop",
+      "Adaptación Modular Interactiva",
+      "Estructura Móvil Optimizada"
+    ],
+    "descripciones": [
+      "Las cards se plantean como contenedores modulares y flexibles diseñados para organizar contenido como lanzamientos, eventos y productos de forma clara.",
+      "Su estructura mantiene una jerarquía visual estricta entre imágenes y acciones, facilitando una lectura rápida e intuitiva a lo largo de la navegación.",
+      "El sistema se adapta perfectamente a desktop y móvil mediante pequeños ajustes de espaciado, tipografía y proporciones, garantizando una usabilidad impecable."
+    ],
     "descripcion": "Las cards se plantean como contenedores modulares y flexibles diseñados para organizar contenido como lanzamientos, eventos y productos de forma clara. Su estructura mantiene una jerarquía visual estricta entre imágenes y acciones, facilitando una lectura rápida e intuitiva. \n\nEl sistema se adapta perfectamente a desktop y móvil mediante pequeños ajustes de espaciado, tipografía y proporciones, garantizando la coherencia visual y una usabilidad impecable en cualquier dispositivo.",
     "textoSecundario": ""
   },
   {
-    "id": 13,
-    "titulo": "RETÍCULA BASE",
-    "subtitulo": "Web",
-    "categoria": "Web",
+    "id": "bandcamp-reticula-base-desktop",
+    "titulo": "RETÍCULA BASE DESKTOP",
+    "subtitulo": "Estructura Web",
+    "categoria": "web",
     "portada": "/img/reticula_web_web.png",
     "galeria": [
-        "/img/reticula_web_web.png"
+      "/img/reticula_web_web.png"
     ],
     "descripcion": "Filas:\n • Recuento: 1000\n • Tipo: arriba\n • Altura: 4\n • Desplazamiento: 0\n • Gutter: 4\n\nColumnas:\n • Recuento: 12\n • Tipo: estirar\n • Altura: auto\n • Desplazamiento: 0\n • Gutter: 20",
-    "textoSecundario": "Se aplicaría para desktop"
+    "textoSecundario": "Se aplicaría para entornos desktop."
   },
   {
-    "id": 14,
-    "titulo": "RETÍCULA BASE",
-    "subtitulo": "Subtítulo del tercer bloque",
-    "categoria": "Web",
+    "id": "bandcamp-reticula-botones-foto",
+    "titulo": "RETÍCULA DE BOTONES",
+    "subtitulo": "Detalle técnico de interacción",
+    "categoria": "web",
     "portada": "/img/botones_web_foto_bandcamp.png",
     "galeria": [],
     "descripcion": "Aquí va la descripción principal para este tercer bloque de la página web.",
