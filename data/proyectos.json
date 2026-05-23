@@ -371,6 +371,7 @@
     "descripcion": "Establecimiento de las pautas estilísticas estructurales que delimitan los contenedores de información. Las sombras aportan profundidad tridimensional simulada mientras que los trazos asientan el orden reticular analógico.",
     "textoSecundario": "Los microdetalles visuales construyen la percepción inconsciente de solidez y profesionalismo técnico."
   },
+  
   {
     "id": "bandcamp-ui-detalles-interfaz",
     "titulo": "ESQUINAS E ICONOGRAFÍA",
@@ -391,5 +392,29 @@
     ],
     "descripcion": "Consolidación de los últimos detalles atómicos del sistema visual. La homogeneidad de las esquinas en los botones e inputs, sumada al rigor formal de la iconografía de UI, asienta la cohesión global de la marca en la web.",
     "textoSecundario": "El radio de curvatura y el peso visual iconográfico definen el verdadero temperamento geométrico de una interfaz."
-  }
+  },
+
+
+  {
+    "id": "bandcamp-sistema-módulos",
+    "titulo": "MÓDULOS",
+    "subtitulo": " Sistema de composición modular",
+    "categoria": "sistema",
+    "descripcion": "Los módulos representan los valores de marca: conexión ( cuadrados azules, simbolizan una comunidad solida), fidelidad (circulo amarillo, simmboliza el producto tangible) y cercanía (zigzag , simboliza el sonido y la repercusion del artista)",
+    "textoSecundario": "",
+    "portada": "/img/módulos.png",
+    "galeria": []
+  },
+
+  {
+    "aplicaciones": true,
+    "id": "bandcamp-sistema-retícula",
+    "titulo": "RETÍCULA Y COMPOSICIÓN",
+    "subtitulo": " Sistema de composición modular",
+    "categoria": "sistema",
+    "descripcion": "A partir de una cuadrícula base de cuadrados se desarroyan las diferentes conbianciones de módulos, alternando colores, tamaños, posiciones, espaciados y secciones de estos. ",
+    "textoSecundario": "",
+    "portada": "/img/retícula_módulos.png",
+    "galeria": []
+    } 
 ]
