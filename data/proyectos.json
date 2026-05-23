@@ -272,5 +272,28 @@
     "textoSecundario": "",
     "portada": "/img/recursos-motion.jpg",
     "galeria": []
+  },
+
+  {
+    "id": "bandcamp-sistema-módulos",
+    "titulo": "MÓDULOS",
+    "subtitulo": " Sistema de composición modular",
+    "categoria": "sistema",
+    "descripcion": "Los módulos representan los valores de marca: conexión ( cuadrados azules, simbolizan una comunidad solida), fidelidad (circulo amarillo, simmboliza el producto tangible) y cercanía (zigzag , simboliza el sonido y la repercusion del artista)",
+    "textoSecundario": "",
+    "portada": "/img/módulos.png",
+    "galeria": []
+  },
+
+  {
+    "aplicaciones": true,
+    "id": "bandcamp-sistema-retícula",
+    "titulo": "RETÍCULA Y COMPOSICIÓN",
+    "subtitulo": " Sistema de composición modular",
+    "categoria": "sistema",
+    "descripcion": "A partir de una cuadrícula base de cuadrados se desarroyan las diferentes conbianciones de módulos, alternando colores, tamaños, posiciones, espaciados y secciones de estos. ",
+    "textoSecundario": "",
+    "portada": "/img/retícula_módulos.png",
+    "galeria": []
   }
 ]
