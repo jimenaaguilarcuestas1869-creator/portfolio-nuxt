@@ -109,11 +109,17 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
       </div>
       
       <div class="libreta-cuerpo">
+<<<<<<< HEAD
         <div class="manual-content-display">
           
           <div v-if="proyectosFiltrados.length === 0" class="no-proyectos">
             <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
           </div>
+=======
+        <h1 class="titulo-seccion" v-if="filtroActivo">
+          {{ opcionesMenu.find(fase => fase.id === filtroActivo)?.nombre }}
+        </h1>
+>>>>>>> 281b4d53bde28c9c373799fd4cc23e5240c65f75
 
           <div 
             v-for="proyecto in proyectosFiltrados" 
@@ -172,6 +178,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </template>
 
 <style scoped>
+<<<<<<< HEAD
 .proyectos-section {
   min-height: 80vh; /* Asegura un tamaño mínimo para evitar saltos drásticos de scroll */
   position: relative;
@@ -180,6 +187,22 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   padding: 60px 0;
   font-size: 1.5rem;
   color: #666;
+=======
+.titulo-seccion {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-bottom: 4px solid #3b82f6;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.modal-description {
+  white-space: pre-line;
+>>>>>>> 281b4d53bde28c9c373799fd4cc23e5240c65f75
 }
 .manual-layout {
   display: flex;
