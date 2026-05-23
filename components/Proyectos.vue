@@ -119,9 +119,10 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
           <div 
             v-for="proyecto in proyectosFiltrados" 
             :key="proyecto.id" 
-            class="manual-layout" 
-            @click="abrirModal(proyecto)"
+            :class="['manual-layout', { 'sin-click': proyecto.categoria.toLowerCase() === 'concepto' }]"
+            @click="proyecto.categoria.toLowerCase() !== 'concepto' ? abrirModal(proyecto) : null"
           >
+          
             <div class="manual-left">
               <h2 class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
@@ -218,6 +219,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 .modal-description {
   white-space: pre-line;
 }
+
 
 .modal, .modal-content {
   background-color: #EEE6D5 !important;

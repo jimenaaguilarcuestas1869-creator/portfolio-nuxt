@@ -6,7 +6,7 @@
     "categoria": "concepto",
     "descripcion": "Es un ecosistema de apoyo directo entre creadores y oyentes. \n\nA diferencia de los grandes servicios de streaming, Bandcamp se erige como un campamento base (Camp) para artistas independientes, donde la comunidad no solo consume música, sino que invierte en ella a través de formatos físicos y merchandising, devolviendo el valor humano y económico a la industria musical.",
     "textoSecundario": "Nuestra propuesta de rediseño se centra en recuperar la 'imperfección' y la humanidad de los medios analógicos como el vinilo y el cassette, trasladando esa experiencia táctil y física al entorno de la interfaz digital.",
-    "portada": "/img/concepto-hero.jpg"
+    "portada": "/img/quienessomos_concepto.png"
   },
   {
     "id": "bandcamp-valores",
@@ -15,7 +15,7 @@
     "categoria": "concepto",
     "descripcion": "Nuestra propuesta de rediseño se fundamenta en tres pilares esenciales: el respeto por el trabajo del artista, la transparencia económica y la conexión humana entre creador y oyente.",
     "textoSecundario": "Buscamos trasladar la calidez del format físico (el tacto del vinilo, el ritual del cassette) a la experiencia digital, creando una interfaz que premie la pausa y la escucha activa frente al consumo masivo e impersonal de otras plataformas de streaming.",
-    "portada": "/img/valores-bandcamp.jpg"
+    "portada": "/img/valores_concepto.png"
   },
   {
     "id": "bandcamp-idea-principal",
@@ -24,7 +24,7 @@
     "categoria": "concepto",
     "descripcion": "El rediseño nace de una premisa clara: Bandcamp no es una plataforma de consumo masivo, sino un punto de encuentro y resistencia cultural. Frente al algoritmo frío del streaming tradicional, transformamos la interfaz en un espacio que celebra el coleccionismo y el apoyo directo, donde los usuarios no solo reproducen pistas, sino que apuestan por la supervivencia económica de los creadores.",
     "textoSecundario": "La identidad visual y la experiencia de usuario se reformulan para evocar el espíritu original de las tiendas de discos locales y los fanzines: espacios físicos donde la música se busca, se descubre con pausa y se valora como una pieza artística única.",
-    "portada": "/img/concepto-idea-principal.jpg"
+    "portada": "/img/ideaprincipal_concepto.png"
   },
   {
     "id": "bandcamp-base-estrategica",
@@ -33,7 +33,7 @@
     "categoria": "concepto",
     "descripcion": "Nuestra estrategia se asienta sobre el concepto de la 'tactilidad digital'. Buscamos recuperar la humanidad y el calor de los formatos físicos (el grano del vinilo, el mecanismo del cassette, el diseño editorial del formato físico) y traducirlos en interacciones visuales dentro de la pantalla.",
     "textoSecundario": "Esto se traduce en un sistema gráfico texturizado, un uso consciente del espacio y una dirección de arte que huye de la pulcritud digital corporativa. El objetivo es que la interfaz se 'sienta' viva, cercana y texturada, priorizando la escucha activa frente a la reproducción aleatoria.",
-    "portada": "/img/concepto-base-estrategica.jpg"
+    "portada": "/img/baseestrategica_concepto.png"
   },
   {
     "id": "bandcamp-logo-principal",
@@ -96,10 +96,7 @@
     "titulo": "Componentes de Interfaz UI",
     "subtitulo": "Sistema de diseño web",
     "categoria": "Web",
-    "portada": "/img/botones_web_foto_bandcamp.png",
-    "galeria": [
-      "/img/botones_web_foto_bandcamp.png"
-    ],
+
     "descripcion": "Diseño del sistema de botones y variantes de interacción para la plataforma web de Bandcamp. Incluye la definición de estados default, hover y active.",
     "textoSecundario": ""
   },
@@ -119,7 +116,19 @@
   },
   {
     "id": 13,
-    "titulo": "TERCERA SECCIÓN WEB",
+    "titulo": "RETÍCULA BASE",
+    "subtitulo": "Web",
+    "categoria": "Web",
+    "portada": "/img/reticula_web_web.png",
+    "galeria": [
+        "/img/reticula_web_web.png"
+    ],
+    "descripcion": "Filas:\n • Recuento: 1000\n • Tipo: arriba\n • Altura: 4\n • Desplazamiento: 0\n • Gutter: 4\n\nColumnas:\n • Recuento: 12\n • Tipo: estirar\n • Altura: auto\n • Desplazamiento: 0\n • Gutter: 20",
+    "textoSecundario": "Se aplicaría para desktop"
+  },
+  {
+    "id": 14,
+    "titulo": "RETÍCULA BASE",
     "subtitulo": "Subtítulo del tercer bloque",
     "categoria": "Web",
     "portada": "/img/botones_web_foto_bandcamp.png",
