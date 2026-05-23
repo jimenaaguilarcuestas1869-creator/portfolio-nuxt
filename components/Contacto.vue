@@ -22,37 +22,29 @@ const equipo = ref([
   },
   {
     id: 2,
-    nombre: "Compañero 2",
-    foto: "/img/tu-foto.jpg", // Rutas provisionales para que las cambien ellos
-    email: "correo.companero2@gmail.com",
-    ig_design: "@instagram_diseno_2",
-    url_design: "#",
-    ig_personal: "@instagram_personal_2",
-    url_personal: "#",
+    nombre: "Emma González",
+    foto: "/img/tu-foto.jpg",
+    email: "emmagfpc@gmail.com",
+    ig_design: "@gonfer__",
+    url_design: "https://www.instagram.com/gonfer__?igsh=ajZyY2xtYzFvdXZr",
     linkedin: "Nombre Compañero 2",
     url_linkedin: "#"
   },
   {
     id: 3,
-    nombre: "Compañero 3",
-    foto: "/img/tu-foto.jpg",
+    nombre: "Jimena Aguilar",
+    foto: "/img/jimena_sobremi.png",
     email: "correo.companero3@gmail.com",
-    ig_design: "@instagram_diseno_3",
-    url_design: "#",
-    ig_personal: "@instagram_personal_3",
-    url_personal: "#",
-    linkedin: "Nombre Compañero 3",
-    url_linkedin: "#"
+    ig_design: "@mariajimenaaguilarcuestas",
+    url_design: "https://www.instagram.com/mariajimenaaguilarcuestas?igsh=cnp1NDZ6YzE3bXIw",
   },
   {
     id: 4,
-    nombre: "Compañero 4",
+    nombre: "Marco Moyano",
     foto: "/img/tu-foto.jpg",
     email: "correo.companero4@gmail.com",
     ig_design: "@instagram_diseno_4",
     url_design: "#",
-    ig_personal: "@instagram_personal_4",
-    url_personal: "#",
     linkedin: "Nombre Compañero 4",
     url_linkedin: "#"
   }
@@ -86,12 +78,12 @@ const equipo = ref([
               <a :href="miembro.url_design" target="_blank">{{ miembro.ig_design }}</a>
             </div>
             
-            <div class="contact-item">
+            <div v-if="miembro.ig_personal" class="contact-item">
               <img src="/img/iconos/icono-ig.svg" alt="Instagram Personal" class="contact-icon">
               <a :href="miembro.url_personal" target="_blank">{{ miembro.ig_personal }}</a>
             </div>
             
-            <div class="contact-item">
+            <div v-if="miembro.linkedin" class="contact-item">
               <img src="/img/iconos/icono-linkedin.svg" alt="LinkedIn" class="contact-icon">
               <a :href="miembro.url_linkedin" target="_blank">{{ miembro.linkedin }}</a>
             </div>
