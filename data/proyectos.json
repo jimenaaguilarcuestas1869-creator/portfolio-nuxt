@@ -72,21 +72,23 @@
     "portada": "/img/nucleo-tipografia.jpg"
   },
   {
-    "id": "bandcamp-aplicaciones-cartel-foto",
-    "titulo": "CARTEL FOTOGRÁFICO",
-    "subtitulo": "Aplicaciones audiovisuales",
+    "aplicaciones": true,
+    "id": "bandcamp-aplicaciones-cartel-ilus",
+    "titulo": "CARTELERÍA",
+    "subtitulo": "Cartel basado en ilustración",
     "categoria": "aplicaciones",
-    "descripcion": "Pieza gráfica publicitaria para soportes digitales.",
+    "descripcion": "Cartel basado en ilustración para medios horizontales",
     "textoSecundario": "",
     "portada": "/img/Banner mockup 1.png",
     "galeria": []
   },
   {
-    "id": "bandcamp-aplicaciones-cartel-ilus",
-    "titulo": "CARTEL ILUSTRACIÓN",
-    "subtitulo": "Aplicaciones audiovisuales",
+    "aplicaciones": true,
+    "id": "bandcamp-aplicaciones-cartel-fot",
+    "titulo": "",
+    "subtitulo": "Cartel fotográfico",
     "categoria": "aplicaciones",
-    "descripcion": "Pieza gráfica basada en técnicas de ilustración contemporánea.",
+    "descripcion": "Gran banner promocional para carreteras",
     "textoSecundario": "",
     "portada": "/img/Cartel mockup 2.jpg",
     "galeria": []

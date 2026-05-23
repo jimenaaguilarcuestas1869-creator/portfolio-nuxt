@@ -117,19 +117,19 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
           </div>
 
           <div 
-            v-for="proyecto in proyectosFiltrados" 
-            :key="proyecto.id" 
-            class="manual-layout" 
-            @click="abrirModal(proyecto)"
-          >
+             v-for="proyecto in proyectosFiltrados" 
+             :key="proyecto.id" 
+             :class="proyecto.aplicaciones ? 'aplicaciones-layout' : 'manual-layout'" 
+             @click="abrirModal(proyecto)"
+             >
             <div class="manual-left">
-              <h2 class="manual-title">{{ proyecto.titulo }}</h2>
+              <h2 v-if="proyecto.titulo" class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
               
               <img 
                 v-if="proyecto.portada" 
                 :src="proyecto.portada.startsWith('assets/') ? proyecto.portada.replace('assets/', '/') : proyecto.portada" 
-                :alt="proyecto.titulo" 
+                :alt="proyecto.titulo || 'Imagen de aplicación'" 
                 class="manual-img"
               >
             </div>
@@ -162,7 +162,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
         </div>
 
         <div class="modal-text">
-          <h2>{{ proyectoSeleccionado.titulo }}</h2>
+          <h2 v-if="proyectoSeleccionado.titulo">{{ proyectoSeleccionado.titulo }}</h2>
           <p class="category">{{ proyectoSeleccionado.categoria }}</p>
           <p class="modal-description" v-if="proyectoSeleccionado.descripcion">{{ proyectoSeleccionado.descripcion }}</p>
         </div>
@@ -172,6 +172,35 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </template>
 
 <style scoped>
+
+.manual-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.manual-right {
+  align-self: center;  
+  max-width: 500px;
+  text-align: left;
+}
+
+.aplicaciones-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10px 0;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb;
+}
+
 .proyectos-section {
   min-height: 80vh;
   position: relative;
@@ -196,16 +225,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 .modal-description {
   white-space: pre-line;
 }
-.manual-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 80px 0;
-  color: #000000;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  border-bottom: 1px solid #e5e7eb; /* Línea que separa los bloques que van hacia abajo */
-}
+
 .manual-layout:last-child {
   border-bottom: none; /* Quita la línea divisoria en el último elemento */
 }
@@ -223,11 +243,7 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   color: #3b82f6;
   margin-bottom: 20px;
 }
-.manual-right {
-  align-self: flex-end;
-  max-width: 500px;
-  text-align: left;
-}
+
 .manual-text {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -255,5 +271,17 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   .manual-left {
     max-width: 50%;
   }
+
+  @media (min-width: 768px) {
+  /* Añadimos tu nueva clase aquí separada por una coma */
+  .manual-layout, .aplicaciones-layout {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .manual-left {
+    max-width: 50%;
+  }
+}
+
 }
 </style>
