@@ -179,16 +179,25 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
                 />
               </div>
 
-              <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && !String(proyecto.titulo).toUpperCase().includes('SECUNDARIO') && filtroActivo !== 'web' && filtroActivo !== 'recursos'" class="contenedor-logos-marca" @click.stop>
+              <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && !String(proyecto.titulo).toUpperCase().includes('SECUNDARIO') && filtroActivo === 'nucleo'" class="contenedor-logos-marca" @click.stop>
                 <div v-if="proyecto.galeria[0]" class="logo-box-placeholder">
                   <span class="tag-logo">Horizontal</span>
                   <img :src="proyecto.galeria[0]" alt="Logo horizontal" class="img-marca-preview" />
                 </div>
                 <div v-if="proyecto.galeria[1]" class="logo-box-placeholder">
                   <span class="tag-logo">En Vertical</span>
-                  <img :src="proyecto.galeria[1]" alt="Logo vertical" class="img-marca-preview" />
-                </div>
+                <img :src="proyecto.galeria[1]" alt="Logo vertical" class="img-marca-preview" />
               </div>
+            </div>
+
+            <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && filtroActivo === 'web'" class="contenedor-interfaz-web" @click.stop>
+              <div v-for="(imgRuta, index) in proyecto.galeria" :key="index" class="caja-ui-bloque">
+                <span v-if="proyecto.titulosDinamicos?.[index]" class="tag-logo-web">
+                  {{ proyecto.titulosDinamicos[index] }}
+                </span>
+                <img :src="imgRuta" :alt="proyecto.titulosDinamicos?.[index] || 'Componente UI'" class="img-web-preview" />
+              </div>
+            </div>
 
               <div v-else-if="String(proyecto.titulo).toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
                 <div class="fila-botones"><BotonUI color="azul" variante="sin-icono" texto="Botón" /><BotonUI color="azul" variante="icono-izq" texto="Botón" /><BotonUI color="azul" variante="icono-der" texto="Botón" /><BotonUI color="azul" variante="dos-iconos" texto="Botón" /><BotonUI color="azul" variante="solo-icono" /></div>
@@ -257,7 +266,45 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
 </template>
 
 <style scoped>
-/* --- CONTENEDORES DE CONTENIDO INTERNO --- */
+.contenedor-interfaz-web {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;         
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.caja-ui-bloque {
+  position: relative;
+  width: 100%;
+  padding-top: 35px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.tag-logo-web {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #3b82f6;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.img-web-preview {
+  width: 100%;
+  max-width: 500px;      
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
 .contenedor-tipo-imagenes {
   display: flex;
   flex-direction: column;
@@ -288,7 +335,6 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 .bloque-muestra-color {
   width: 100%;
@@ -452,7 +498,6 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
   height: auto;
   margin-top: 20px;
   border-radius: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 /* MODOS ESTÁTICOS */
@@ -499,7 +544,6 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
 @media (min-width: 768px) {
   .manual-layout, .aplicaciones-layout {
     flex-direction: row;
-    justify-content: space-between;
   }
   .manual-left {
     max-width: 50%;
@@ -508,5 +552,20 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
     margin-top: 140px;
     align-self: flex-start;
   }
+}
+
+.manual-left img, 
+.manual-left svg,
+.manual-img,
+.img-tipo-muestra,
+.img-marca-preview {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.swiper-container, 
+.swiper-slide, 
+.swiper-slide img {
+  box-shadow: none !important;
 }
 </style>
