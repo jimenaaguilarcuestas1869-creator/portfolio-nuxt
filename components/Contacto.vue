@@ -11,7 +11,7 @@ const equipo = ref([
   {
     id: 1,
     nombre: "Sara Escribano",
-    foto: "/img/tu-foto.jpg", // Usa tu foto actual
+    foto: "/img/tu-foto.jpg", 
     email: "escribano.sara@gmail.com",
     ig_design: "@sara.escribano_design",
     url_design: "https://www.instagram.com/sara.escribano_design/?hl=es",
@@ -23,7 +23,7 @@ const equipo = ref([
   {
     id: 2,
     nombre: "Emma González",
-    foto: "/img/tu-foto.jpg",
+    foto: "/img/emma.jpg",
     email: "emmagfpc@gmail.com",
     ig_design: "@gonfer__",
     url_design: "https://www.instagram.com/gonfer__?igsh=ajZyY2xtYzFvdXZr",
@@ -34,7 +34,7 @@ const equipo = ref([
     id: 3,
     nombre: "Jimena Aguilar",
     foto: "/img/jimena_sobremi.png",
-    email: "correo.companero3@gmail.com",
+    email: "jimenaaguilarcuestas1869@gmail.com",
     ig_design: "@mariajimenaaguilarcuestas",
     url_design: "https://www.instagram.com/mariajimenaaguilarcuestas?igsh=cnp1NDZ6YzE3bXIw",
   },

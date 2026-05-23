@@ -270,7 +270,10 @@
     "categoria": "recursos",
     "descripcion": "Comportamientos de animación para el entorno digital. Los avatares imitan un estilo de juego retro mediante interpolación 'mantener', mientras que el logotipo responde al audio aplicando efectos de vibración (wiggle) u onda (zigzag) con curvas suaves.",
     "textoSecundario": "",
-    "portada": "/img/recursos-motion.jpg",
-    "galeria": []
+    "portada": "/img/audiovisuales.png",
+    "galeria": [
+      "/img/audiovisual1.mp4",
+      "/img/audiovisuales2.mp4"
+    ]
   }
 ]
