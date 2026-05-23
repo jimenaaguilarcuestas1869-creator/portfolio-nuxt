@@ -18,6 +18,7 @@ interface _GlobalComponents {
   Header: typeof import("../../components/Header.vue")['default']
   Hero: typeof import("../../components/Hero.vue")['default']
   Proyectos: typeof import("../../components/Proyectos.vue")['default']
+  SobreMi: typeof import("../../components/SobreMi.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   NuxtErrorBoundary: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -46,6 +47,7 @@ interface _GlobalComponents {
   LazyHeader: LazyComponent<typeof import("../../components/Header.vue")['default']>
   LazyHero: LazyComponent<typeof import("../../components/Hero.vue")['default']>
   LazyProyectos: LazyComponent<typeof import("../../components/Proyectos.vue")['default']>
+  LazySobreMi: LazyComponent<typeof import("../../components/SobreMi.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   LazyNuxtErrorBoundary: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>

@@ -4,7 +4,6 @@ import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
 
-// Registrar los componentes interactivos de Swiper
 register()
 
 // --- ESTADOS REACTIVOS ---
@@ -22,34 +21,32 @@ const opcionesMenu = [
   { id: 'web', nombre: 'Web' }
 ]
 
-// --- SCROLL EN EL HOME ---
+// --- CONTROL DE SCROLL INTEGRADO ---
 const isSidebarVisible = ref(false)
 
 const handleScroll = () => {
   const scrollY = window.scrollY
   const windowHeight = window.innerHeight
 
-  // 1. Controlar la visibilidad de la barra lateral (aparece tras pasar el Hero)
+  // Controla cuándo aparece la barra flotante estilo libreta
   isSidebarVisible.value = scrollY >= windowHeight - 150
+}
 
-  // 2. Controlar si llegamos a la sección de abajo (Contacto) mediante coordenadas reales 🎯
-  const seccionContacto = document.getElementById('contacto') || document.querySelector('.proyectos-section')
+// --- FUNCIÓN DE FILTRADO CORREGIDA CON FIJACIÓN DE SCROLL ---
+const cambiarFila = async (idFase) => {
+  filtroActivo.value = idFase
   
-  if (seccionContacto) {
-    const rect = seccionContacto.getBoundingClientRect()
-    
-    // Si la sección de abajo ya ha entrado o está muy cerca de entrar
-    if (rect.top <= 450) {
-      if (filtroActivo.value !== null) {
-        filtroActivo.value = null
-      }
-      return 
-    }
-  }
-
-  // 3. Si volvemos arriba, se restaura la primera pestaña automáticamente
-  if (filtroActivo.value === null) {
-    filtroActivo.value = 'concepto'
+  // Forzamos un pequeño retraso para que el navegador recalcule el tamaño dinámico
+  await nextTick()
+  
+  // Buscamos la sección de proyectos y recolocamos el scroll de forma fija en su inicio
+  const seccionProyectos = document.getElementById('proyectos')
+  if (seccionProyectos) {
+    const posicionSeccion = seccionProyectos.getBoundingClientRect().top + window.scrollY
+    window.scrollTo({
+      top: posicionSeccion - 40, // Dejamos un pequeño margen superior estético
+      behavior: 'auto' // Evita rebotes raros que empujen la web hacia abajo
+    })
   }
 }
 
@@ -69,28 +66,21 @@ const proyectosFiltrados = computed(() => {
   )
 })
 
-// --- FUNCIONES DEL MODAL ---
+// --- MODAL DE MULTIMEDIA ---
 const abrirModal = async (proyecto) => {
   proyectoSeleccionado.value = proyecto
   modalAbierto.value = true
 
   await nextTick()
-
   const modalEl = document.getElementById('project-modal')
-  gsap.fromTo(modalEl, { opacity: 0 }, { opacity: 1, duration: 0.4 })
-  
-  gsap.fromTo('.modal-anim', 
-    { opacity: 0, x: -60 }, 
-    { opacity: 1, x: 0, duration: 1, ease: 'power2.out', stagger: 0.15 }
-  )
+  gsap.fromTo(modalEl, { opacity: 0 }, { opacity: 1, duration: 0.3 })
 }
 
 const cerrarModal = () => {
   const modalEl = document.getElementById('project-modal')
-  
   gsap.to(modalEl, {
     opacity: 0,
-    duration: 0.3,
+    duration: 0.25,
     onComplete: () => {
       modalAbierto.value = false
       proyectoSeleccionado.value = null
@@ -98,7 +88,7 @@ const cerrarModal = () => {
   })
 }
 
-const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
+const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </script>
 
 <template>
@@ -111,7 +101,7 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
             v-for="fase in opcionesMenu" 
             :key="fase.id"
             :class="['pestana-btn', { active: filtroActivo === fase.id }]"
-            @click="filtroActivo = fase.id"
+            @click="cambiarFila(fase.id)"
           >
             <span v-if="filtroActivo === fase.id">{{ fase.nombre }}</span>
           </button>
@@ -119,86 +109,62 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
       </div>
       
       <div class="libreta-cuerpo">
+        <div class="manual-content-display">
+          
+          <div v-if="proyectosFiltrados.length === 0" class="no-proyectos">
+            <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
+          </div>
 
-        <div v-if="filtroActivo === 'concepto' || filtroActivo === 'nucleo' || filtroActivo === 'sistema'|| filtroActivo === 'recursos'|| filtroActivo === 'aplicaciones'|| filtroActivo === 'web'|| filtroActivo === null" class="manual-content-display">
-          <div v-for="proyecto in proyectosFiltrados" :key="proyecto.id" class="manual-layout">
+          <div 
+            v-for="proyecto in proyectosFiltrados" 
+            :key="proyecto.id" 
+            class="manual-layout" 
+            @click="abrirModal(proyecto)"
+          >
             <div class="manual-left">
               <h2 class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
-              <img v-if="proyecto.portada" :src="proyecto.portada" :alt="proyecto.titulo" class="manual-img">
+              
+              <img 
+                v-if="proyecto.portada" 
+                :src="proyecto.portada.startsWith('assets/') ? proyecto.portada.replace('assets/', '/') : proyecto.portada" 
+                :alt="proyecto.titulo" 
+                class="manual-img"
+              >
             </div>
+            
             <div class="manual-right">
-              <p class="manual-text">{{ proyecto.descripcion }}</p>
+              <p class="manual-text" v-if="proyecto.descripcion">{{ proyecto.descripcion }}</p>
+              <p class="manual-text-secundario" v-if="proyecto.textoSecundario">{{ proyecto.textoSecundario }}</p>
             </div>
           </div>
-        </div>
 
-        <div v-else id="grid-proyectos" class="projects-grid">
-          <div 
-            v-for="proyecto in proyectosFiltrados" 
-            :key="proyecto.id"
-            class="project-card"
-            @click="abrirModal(proyecto)"
-          >
-            <div class="project-img-container">
-              <img :src="proyecto.portada.replace('assets/', '/')" :alt="proyecto.titulo">
-            </div>
-            <div class="project-info">
-              <span>{{ proyecto.categoria }}</span>
-              <h3>{{ proyecto.titulo }}</h3>
-            </div>
-          </div>
-        </div>    
+        </div>
       </div>
+
     </div>
 
-    <div 
-      v-if="modalAbierto && proyectoSeleccionado" 
-      id="project-modal" 
-      class="modal"
-      style="display: block;"
-      @click.self="cerrarModal"
-    >
+    <div v-if="modalAbierto && proyectoSeleccionado" id="project-modal" class="modal" style="display: block;" @click.self="cerrarModal">
       <div class="modal-content">
         <span class="close-modal" @click="cerrarModal">&times;</span>
         
-        <div class="swiper-container-wrapper modal-anim">
-          <swiper-container
-            loop="true"
-            autoplay-delay="3000"
-            autoplay-disable-on-interaction="false"
-            navigation="true"
-            pagination="true"
-            class="swiper-container"
-          >
-            <swiper-slide 
-              v-for="(media, index) in proyectoSeleccionado.galeria" 
-              :key="index"
-            >
+        <div class="swiper-container-wrapper" v-if="proyectoSeleccionado.galeria && proyectoSeleccionado.galeria.length > 0">
+          <swiper-container loop="true" navigation="true" pagination="true" class="swiper-container">
+            <swiper-slide v-for="(media, index) in proyectoSeleccionado.galeria" :key="index">
               <div v-if="esVideo(media)" class="video-container">
-                <video 
-                  autoplay 
-                  muted 
-                  loop 
-                  playsinline 
-                  preload="metadata" 
-                  style="width:100%; max-height:70vh; background:#000;"
-                >
-                  <source :src="media.replace('assets/', '/')" type="video/mp4">
-                  Tu navegador no soporta el vídeo.
+                <video autoplay muted loop playsinline style="width:100%; max-height:70vh; background:#000;">
+                  <source :src="media.startsWith('assets/') ? media.replace('assets/', '/') : media" type="video/mp4">
                 </video>
               </div>
-              <img v-else :src="media.replace('assets/', '/')" alt="Galería">
+              <img v-else :src="media.startsWith('assets/') ? media.replace('assets/', '/') : media" alt="Galería del proyecto">
             </swiper-slide>
           </swiper-container>
         </div>
 
         <div class="modal-text">
-          <h2 id="modal-title" class="modal-anim">{{ proyectoSeleccionado.titulo }}</h2>
-          <p id="modal-category" class="category modal-anim">{{ proyectoSeleccionado.categoria }}</p>
-          <p id="modal-description" class="modal-description modal-anim">
-            {{ proyectoSeleccionado.descripcion }}
-          </p>
+          <h2>{{ proyectoSeleccionado.titulo }}</h2>
+          <p class="category">{{ proyectoSeleccionado.categoria }}</p>
+          <p class="modal-description" v-if="proyectoSeleccionado.descripcion">{{ proyectoSeleccionado.descripcion }}</p>
         </div>
       </div>
     </div>
@@ -206,8 +172,14 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
 </template>
 
 <style scoped>
-.modal-description {
-  white-space: pre-line;
+.proyectos-section {
+  min-height: 80vh; /* Asegura un tamaño mínimo para evitar saltos drásticos de scroll */
+  position: relative;
+}
+.no-proyectos {
+  padding: 60px 0;
+  font-size: 1.5rem;
+  color: #666;
 }
 .manual-layout {
   display: flex;
@@ -215,29 +187,45 @@ const esVideo = (url) => url.toLowerCase().endsWith('.mp4')
   gap: 40px;
   padding: 60px 0;
   color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
-
+.manual-layout:hover {
+  transform: translateY(-2px);
+}
 .manual-title {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 20px;
 }
-
 .manual-subtitle {
   font-size: 1.8rem;
   color: #3b82f6;
+  margin-bottom: 20px;
 }
-
 .manual-right {
   align-self: flex-end;
   max-width: 500px;
   text-align: left;
 }
-
 .manual-text {
   font-size: 1.1rem;
   line-height: 1.6;
+  white-space: pre-line; /* Respeta los saltos de línea \n del JSON */
+}
+.manual-text-secundario {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+  color: #333;
+}
+.manual-img {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 @media (min-width: 768px) {
