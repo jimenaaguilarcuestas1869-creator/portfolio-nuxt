@@ -125,6 +125,15 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
             <div class="manual-left">
               <h2 class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
+
+              <div v-if="proyecto.titulo.toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
+                <div class="fila-botones"><BotonUI color="azul" variante="sin-icono" texto="Botón" /><BotonUI color="azul" variante="icono-izq" texto="Botón" /><BotonUI color="azul" variante="icono-der" texto="Botón" /><BotonUI color="azul" variante="dos-iconos" texto="Botón" /><BotonUI color="azul" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="verde" variante="sin-icono" texto="Botón" /><BotonUI color="verde" variante="icono-izq" texto="Botón" /><BotonUI color="verde" variante="icono-der" texto="Botón" /><BotonUI color="verde" variante="dos-iconos" texto="Botón" /><BotonUI color="verde" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="amarillo" variante="sin-icono" texto="Botón" /><BotonUI color="amarillo" variante="icono-izq" texto="Botón" /><BotonUI color="amarillo" variante="icono-der" texto="Botón" /><BotonUI color="amarillo" variante="dos-iconos" texto="Botón" /><BotonUI color="amarillo" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="rojo" variante="sin-icono" texto="Botón" /><BotonUI color="rojo" variante="icono-izq" texto="Botón" /><BotonUI color="rojo" variante="icono-der" texto="Botón" /><BotonUI color="rojo" variante="dos-iconos" texto="Botón" /><BotonUI color="rojo" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="rosa" variante="sin-icono" texto="Botón" /><BotonUI color="rosa" variante="icono-izq" texto="Botón" /><BotonUI color="rosa" variante="icono-der" texto="Botón" /><BotonUI color="rosa" variante="dos-iconos" texto="Botón" /><BotonUI color="rosa" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="gris" variante="sin-icono" texto="Botón" /><BotonUI color="gris" variante="icono-izq" texto="Botón" /><BotonUI color="gris" variante="icono-der" texto="Botón" /><BotonUI color="gris" variante="dos-iconos" texto="Botón" /><BotonUI color="gris" variante="solo-icono" /></div>
+              </div>
               
               <img 
                 v-if="proyecto.portada" 
@@ -172,6 +181,19 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
 </template>
 
 <style scoped>
+.contenedor-botones-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.fila-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 .proyectos-section {
   min-height: 80vh;
   position: relative;
