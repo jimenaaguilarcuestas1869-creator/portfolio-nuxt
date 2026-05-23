@@ -168,7 +168,7 @@
     "subtitulo": "Sistema de diseño web",
     "categoria": "web",
     "descripcion": "Diseño del sistema de botones y variantes de interacción para la plataforma web de Bandcamp. Incluye la definición de estados default, hover y active.",
-    "textoSecundario": ""
+    "textoSecundario": "Las cards se diseñan como contenedores modulares y flexibles que organizan diversos contenidos del sitio web, como música, eventos o productos, mediante una jerarquía clara entre imágenes, textos y acciones. Aunque varían en tamaño y densidad de información según el contexto, mantienen siempre la coherencia visual del sistema respetando la retícula, los espaciados y la tipografía predefinida. Asimismo, incorporan llamadas a la acción y estados interactivos que optimizan la navegación intuitiva. Finalmente, esta estructura y composición se conservan idénticas tanto en ordenadores como en dispositivos móviles, aplicando únicamente sutiles ajustes en proporciones, fuentes y márgenes para garantizar la usabilidad, legibilidad y el rápido reconocimiento del contenido en pantallas reducidas."
   },
   {
     "id": "bandcamp-ui-kit",

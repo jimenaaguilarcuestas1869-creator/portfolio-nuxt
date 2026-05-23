@@ -4,6 +4,7 @@ import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
 import BotonUI from '~/components/BotonUI.vue'
+import CardUI from '~/components/CardUI.vue' // 👈 Importamos tu nuevo componente modular
 
 register()
 
@@ -186,18 +187,18 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
                 </div>
                 <div v-if="proyecto.galeria[1]" class="logo-box-placeholder">
                   <span class="tag-logo">En Vertical</span>
-                <img :src="proyecto.galeria[1]" alt="Logo vertical" class="img-marca-preview" />
+                  <img :src="proyecto.galeria[1]" alt="Logo vertical" class="img-marca-preview" />
+                </div>
               </div>
-            </div>
 
-            <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && filtroActivo === 'web'" class="contenedor-interfaz-web" @click.stop>
-              <div v-for="(imgRuta, index) in proyecto.galeria" :key="index" class="caja-ui-bloque">
-                <span v-if="proyecto.titulosDinamicos?.[index]" class="tag-logo-web">
-                  {{ proyecto.titulosDinamicos[index] }}
-                </span>
-                <img :src="imgRuta" :alt="proyecto.titulosDinamicos?.[index] || 'Componente UI'" class="img-web-preview" />
+              <div v-else-if="proyecto.galeria && proyecto.galeria.length > 0 && filtroActivo === 'web'" class="contenedor-interfaz-web" @click.stop>
+                <div v-for="(imgRuta, index) in proyecto.galeria" :key="index" class="caja-ui-bloque">
+                  <span v-if="proyecto.titulosDinamicos?.[index]" class="tag-logo-web">
+                    {{ proyecto.titulosDinamicos[index] }}
+                  </span>
+                  <img :src="imgRuta" :alt="proyecto.titulosDinamicos?.[index] || 'Componente UI'" class="img-web-preview" />
+                </div>
               </div>
-            </div>
 
               <div v-else-if="String(proyecto.titulo).toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
                 <div class="fila-botones"><BotonUI color="azul" variante="sin-icono" texto="Botón" /><BotonUI color="azul" variante="icono-izq" texto="Botón" /><BotonUI color="azul" variante="icono-der" texto="Botón" /><BotonUI color="azul" variante="dos-iconos" texto="Botón" /><BotonUI color="azul" variante="solo-icono" /></div>
@@ -206,6 +207,24 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
                 <div class="fila-botones"><BotonUI color="rojo" variante="sin-icono" texto="Botón" /><BotonUI color="rojo" variante="icono-izq" texto="Botón" /><BotonUI color="rojo" variante="icono-der" texto="Botón" /><BotonUI color="rojo" variante="dos-iconos" texto="Botón" /><BotonUI color="rojo" variante="solo-icono" /></div>
                 <div class="fila-botones"><BotonUI color="rosa" variante="sin-icono" texto="Botón" /><BotonUI color="rosa" variante="icono-izq" texto="Botón" /><BotonUI color="rosa" variante="icono-der" texto="Botón" /><BotonUI color="rosa" variante="dos-iconos" texto="Botón" /><BotonUI color="rosa" variante="solo-icono" /></div>
                 <div class="fila-botones"><BotonUI color="gris" variante="sin-icono" texto="Botón" /><BotonUI color="gris" variante="icono-izq" texto="Botón" /><BotonUI color="gris" variante="icono-der" texto="Botón" /><BotonUI color="gris" variante="dos-iconos" texto="Botón" /><BotonUI color="gris" variante="solo-icono" /></div>
+                
+                <div class="seccion-cards-live">
+                  <CardUI 
+                    variante="azul"
+                    titulo="Chapter 7 (10th Anniversary Edition)"
+                    autor="Ezra Collective"
+                  />
+
+                  <CardUI 
+                    variante="verde"
+                    titulo="Chapter 7 (10th Anniversary Edition)"
+                    autor="Ezra Collective"
+                    descripcion="Se celebran los 10 años desde su lanzamiento."
+                    fecha="05/07/26"
+                    hora="21:00 h"
+                    precio="Gratis"
+                  />
+                </div>
               </div>
               
               <img 
@@ -266,10 +285,11 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
 </template>
 
 <style scoped>
+/* --- MAQUETACIÓN PESTAÑA WEB (ESQUEMAS) --- */
 .contenedor-interfaz-web {
   display: flex;
   flex-direction: column;
-  gap: 45px;         
+  gap: 45px;          
   margin-top: 30px;
   margin-bottom: 30px;
   width: 100%;
@@ -305,6 +325,17 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
   object-fit: contain;
   display: block;
 }
+
+/* --- SECCIÓN CARDS MODULARES DEBAJO DE BOTONES --- */
+.seccion-cards-live {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* --- CONTENEDOR TIPO IMÁGENES --- */
 .contenedor-tipo-imagenes {
   display: flex;
   flex-direction: column;
@@ -320,6 +351,8 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
   object-fit: contain;
   display: block;
 }
+
+/* --- MUESTRAS DE COLOR --- */
 .contenedor-paleta-manual {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -363,6 +396,8 @@ const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : fals
   color: #777;
   font-family: monospace;
 }
+
+/* --- LOGOTIPOS --- */
 .contenedor-logos-marca {
   display: flex;
   flex-direction: column;
