@@ -41,12 +41,10 @@ const equipo = ref([
   {
     id: 4,
     nombre: "Marco Moyano",
-    foto: "/img/tu-foto.jpg",
-    email: "correo.companero4@gmail.com",
-    ig_design: "@instagram_diseno_4",
-    url_design: "#",
-    linkedin: "Nombre Compañero 4",
-    url_linkedin: "#"
+    foto: "/img/marco.jpg",
+    email: "marcomoyanog@gmail.com",
+    ig_design: "@marcomoyano",
+   
   }
 ])
 </script>
