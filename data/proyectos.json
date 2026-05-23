@@ -126,5 +126,61 @@
     "galeria": [],
     "descripcion": "Aquí va la descripción principal para este tercer bloque de la página web.",
     "textoSecundario": "Texto secundario o complementario para el tercer bloque."
+  },
+  {
+    "id": "bandcamp-recursos-ilustracion",
+    "titulo": "SISTEMA DE ILUSTRACIÓN",
+    "subtitulo": "Recursos de marca",
+    "categoria": "recursos",
+    "descripcion": "Diseño de ilustraciones basadas en formas geométricas simples integradas en una cuadrícula base. Incluye una serie de módulos de caras intercambiables para agilizar la creación de avatares y personajes con coherencia visual.",
+    "textoSecundario": "",
+    "portada": "/img/recursos-ilustracion.png",
+    "galeria": [
+      "/img/recursos-ilustracion-1.png",
+      "/img/recursos-ilustracion-2.png",
+      "/img/recursos-ilustracion-3.png",
+      "/img/recursos-ilustracion-4.png"
+    ]
+  },
+  {
+    "id": "bandcamp-recursos-fotografia",
+    "titulo": "LENGUAJE FOTOGRÁFICO",
+    "subtitulo": "Recursos de marca",
+    "categoria": "recursos",
+    "descripcion": "Guía de estilo centrada en la relación entre personas, música y objetos físicos para potenciar el valor del producto tangible. Los montajes integran elementos de la marca respetando perspectivas, filtros e iluminación vintage mediante IA.",
+    "textoSecundario": "",
+    "portada": "/img/recursos-fotografia.png",
+    "galeria": [
+      "/img/recursos-fotografia-1.png",
+      "/img/recursos-fotografia-2.png",
+      "/img/recursos-fotografia-3.png",
+      "/img/recursos-fotografia-4.png"
+    ]
+  },
+  {
+    "id": "bandcamp-recursos-reticula",
+    "titulo": "RETÍCULA Y COMPOSICIÓN",
+    "subtitulo": "Recursos de marca",
+    "categoria": "recursos",
+    "descripcion": "Estructuración del espacio mediante una cuadrícula geométrica base que define la composición de todas las piezas visuales. Este sistema modular garantiza la coherencia formal, equilibra los pesos visuales y permite una total libertad compositiva y de repetición sin perder la identidad de la marca.",
+    "textoSecundario": "",
+    "portada": "/img/recursos-reticula.png",
+    "galeria": [
+      "/img/recursos-reticula-1.png",
+      "/img/recursos-reticula-2.png",
+      "/img/recursos-reticula-3.png",
+      "/img/recursos-reticula-4.png",
+      "/img/recursos-reticula-5.png"
+    ]
+  },
+  {
+    "id": "bandcamp-recursos-motion",
+    "titulo": "PAUTAS DE MOTION DESIGN",
+    "subtitulo": "Recursos de marca",
+    "categoria": "recursos",
+    "descripcion": "Comportamientos de animación para el entorno digital. Los avatares imitan un estilo de juego retro mediante interpolación 'mantener', mientras que el logotipo responde al audio aplicando efectos de vibración (wiggle) u onda (zigzag) con curvas suaves.",
+    "textoSecundario": "",
+    "portada": "/img/recursos-motion.jpg",
+    "galeria": []
   }
 ]
