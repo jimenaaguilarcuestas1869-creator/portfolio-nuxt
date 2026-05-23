@@ -116,15 +116,28 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
             <p>Contenido en desarrollo para la sección {{ filtroActivo }}.</p>
           </div>
 
-          <div 
-             v-for="proyecto in proyectosFiltrados" 
-             :key="proyecto.id" 
-             :class="proyecto.aplicaciones ? 'aplicaciones-layout' : 'manual-layout'" 
-             @click="abrirModal(proyecto)"
-             >
+            <div 
+              v-for="proyecto in proyectosFiltrados" 
+               :key="proyecto.id" 
+               :class="[
+               proyecto.aplicaciones ? 'aplicaciones-layout' : 'manual-layout', 
+               { 'sin-click': proyecto.categoria.toLowerCase() === 'concepto' }
+                   ]" 
+                @click="proyecto.categoria.toLowerCase() !== 'concepto' ? abrirModal(proyecto) : null"
+               >
+          
             <div class="manual-left">
               <h2 v-if="proyecto.titulo" class="manual-title">{{ proyecto.titulo }}</h2>
               <p class="manual-subtitle">{{ proyecto.subtitulo }}</p>
+
+              <div v-if="proyecto.titulo.toUpperCase().includes('INTERFAZ')" class="contenedor-botones-ui" @click.stop>
+                <div class="fila-botones"><BotonUI color="azul" variante="sin-icono" texto="Botón" /><BotonUI color="azul" variante="icono-izq" texto="Botón" /><BotonUI color="azul" variante="icono-der" texto="Botón" /><BotonUI color="azul" variante="dos-iconos" texto="Botón" /><BotonUI color="azul" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="verde" variante="sin-icono" texto="Botón" /><BotonUI color="verde" variante="icono-izq" texto="Botón" /><BotonUI color="verde" variante="icono-der" texto="Botón" /><BotonUI color="verde" variante="dos-iconos" texto="Botón" /><BotonUI color="verde" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="amarillo" variante="sin-icono" texto="Botón" /><BotonUI color="amarillo" variante="icono-izq" texto="Botón" /><BotonUI color="amarillo" variante="icono-der" texto="Botón" /><BotonUI color="amarillo" variante="dos-iconos" texto="Botón" /><BotonUI color="amarillo" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="rojo" variante="sin-icono" texto="Botón" /><BotonUI color="rojo" variante="icono-izq" texto="Botón" /><BotonUI color="rojo" variante="icono-der" texto="Botón" /><BotonUI color="rojo" variante="dos-iconos" texto="Botón" /><BotonUI color="rojo" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="rosa" variante="sin-icono" texto="Botón" /><BotonUI color="rosa" variante="icono-izq" texto="Botón" /><BotonUI color="rosa" variante="icono-der" texto="Botón" /><BotonUI color="rosa" variante="dos-iconos" texto="Botón" /><BotonUI color="rosa" variante="solo-icono" /></div>
+                <div class="fila-botones"><BotonUI color="gris" variante="sin-icono" texto="Botón" /><BotonUI color="gris" variante="icono-izq" texto="Botón" /><BotonUI color="gris" variante="icono-der" texto="Botón" /><BotonUI color="gris" variante="dos-iconos" texto="Botón" /><BotonUI color="gris" variante="solo-icono" /></div>
+              </div>
               
               <img 
                 v-if="proyecto.portada" 
@@ -201,6 +214,19 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   border-bottom: 1px solid #e5e7eb;
 }
 
+.contenedor-botones-ui {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+.fila-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 .proyectos-section {
   min-height: 80vh;
   position: relative;
@@ -226,8 +252,23 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   white-space: pre-line;
 }
 
+
+.modal, .modal-content {
+  background-color: #EEE6D5 !important;
+}
+.manual-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 0; /* Un poco más de espacio arriba y abajo para que respire */
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-bottom: 1px solid #e5e7eb; /* Esta línea separará un bloque de otro hacia abajo */
+}
+
 .manual-layout:last-child {
-  border-bottom: none; /* Quita la línea divisoria en el último elemento */
+  border-bottom: none; /* Evita que el último bloque de abajo del todo tenga línea */
 }
 .manual-layout:hover {
   transform: translateY(-2px);
@@ -283,5 +324,25 @@ const esVideo = (url) => url ? url.toLowerCase().endsWith('.mp4') : false
   }
 }
 
+}
+
+/* --- AJUSTE PARA EL CARRUSEL WEB --- */
+.swiper-container-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  overflow: hidden;
+}
+.swiper-container {
+  max-height: 65vh;
+  background-color: #EEE6D5;
+  border-radius: 8px;
+}
+.swiper-container swiper-slide img {
+  width: 100% !important;
+  height: 65vh !important;
+  object-fit: contain !important;
+  margin: 0 auto;
+  display: block;
 }
 </style>
