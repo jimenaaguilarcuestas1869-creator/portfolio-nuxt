@@ -71,6 +71,9 @@
     "textoSecundario": "Como tipografía secundaria y base para todo el sistema textual (subtítulos, párrafos y microcopy) se emplea Satoshi Variable. Se selecciona por su excelente legibilidad en tamaños reducidos y variedad de pesos, aportando una neutralidad que complementa y equilibra la fuerza de la tipografía principal.",
     "portada": "/img/nucleo-tipografia.jpg"
   },
+
+
+
   {
     "aplicaciones": true,
     "id": "bandcamp-aplicaciones-cartel-ilus",
@@ -84,6 +87,18 @@
   },
   {
     "aplicaciones": true,
+    "id": "bandcamp-aplicaciones-cartel-ilus",
+    "titulo": "",
+    "subtitulo": "",
+    "categoria": "aplicaciones",
+    "descripcion": "Cartel basado en ilustración para medios verticales (banderillas)",
+    "textoSecundario": "",
+    "portada": "/img/Free Single Banner Mockup2.png",
+    "galeria": []
+  },
+
+  {
+    "aplicaciones": true,
     "id": "bandcamp-aplicaciones-cartel-fot",
     "titulo": "",
     "subtitulo": "Cartel fotográfico",
@@ -93,6 +108,32 @@
     "portada": "/img/Cartel mockup 2.jpg",
     "galeria": []
   },
+  {
+    "aplicaciones": true,
+    "id": "bandcamp-aplicaciones-cartel-fot",
+    "titulo": "",
+    "subtitulo": "Cartel fotográfico",
+    "categoria": "aplicaciones",
+    "descripcion": "Carteles para el metro y paneles publicitarios urbanos",
+    "textoSecundario": "",
+    "portada": "/img/behanwarg.png",
+    "galeria": []
+  },
+  {
+    "aplicaciones": true,
+    "id": "bandcamp-aplicaciones-cartel-ilus",
+    "titulo": "PAPELERÍA",
+    "subtitulo": "",
+    "categoria": "aplicaciones",
+    "descripcion": "Contratos en papel y targetas ",
+    "textoSecundario": "",
+    "portada": "/img/Free Small Stationery Set Mockup.png",
+    "galeria": []
+  },
+  
+
+
+
   {
     "id": 11,
     "titulo": "Componentes de Interfaz UI",
