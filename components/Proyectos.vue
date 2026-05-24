@@ -4,7 +4,7 @@ import { register } from 'swiper/element/bundle'
 import gsap from 'gsap'
 import listaProyectos from '~/data/proyectos.json'
 import BotonUI from '~/components/BotonUI.vue'
-import CardUI from '~/components/CardUI.vue' // 👈 Importamos tu nuevo componente modular
+import CardUI from '~/components/CardUI.vue' 
 
 register()
 
@@ -106,10 +106,29 @@ const esEstatico = (proyecto) => {
   const categoria = String(proyecto.categoria || '').toLowerCase()
   return (proyecto.colores && proyecto.colores.length > 0) ||
          (proyecto.fuentes && proyecto.fuentes.length > 0) ||
-         categoria === 'concepto'
+         categoria === 'concepto' ||
+         proyecto.titulo?.toUpperCase() === 'APLICACIÓN'
 }
 
 const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : false
+// --- ANIMACIONES GSAP PARA ELEMENTOS INTERACTIVOS (CESTA) ---
+const animarEntradaCapas = (event) => {
+  gsap.to(event.currentTarget, {
+    y: -12,             // Se eleva sutilmente hacia arriba
+    scale: 1.06,        // Crece un 6% para dar feedback visual
+    duration: 0.35,     // Tiempo de transición suave
+    ease: 'power2.out'  // Curva de velocidad desacelerada
+  })
+}
+
+const animarSalidaCapas = (event) => {
+  gsap.to(event.currentTarget, {
+    y: 0,
+    scale: 1,
+    duration: 0.3,
+    ease: 'power2.out'
+  })
+}
 </script>
 
 <template>

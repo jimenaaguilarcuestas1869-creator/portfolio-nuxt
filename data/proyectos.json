@@ -212,7 +212,11 @@
     "subtitulo": "Detalle técnico de interacción",
     "categoria": "web",
     "portada": "/img/botones_web_foto_bandcamp.png",
-    "galeria": [],
+    "galeria": [
+      "/img/botones_web_foto_bandcamp.png",
+      "/img/botones_1_web.png",
+      "/img/botones_2_web.png"
+    ],
     "descripcion": "Aquí va la descripción principal para este tercer bloque de la página web.",
     "textoSecundario": "Texto secundario o complementario para el tercer bloque."
   },
@@ -392,6 +396,16 @@
     ],
     "descripcion": "Consolidación de los últimos detalles atómicos del sistema visual. La homogeneidad de las esquinas en los botones e inputs, sumada al rigor formal de la iconografía de UI, asienta la cohesión global de la marca en la web.",
     "textoSecundario": "El radio de curvatura y el peso visual iconográfico definen el verdadero temperamento geométrico de una interfaz."
+  },
+
+  {
+    "id": "bandcamp-ui-detalles-interfaz",
+    "titulo": "APLICACIÓN",
+    "subtitulo": "Cesta de la compra",
+    "categoria": "web",
+    "portada": "/img/cesta_web.svg",
+    "descripcion":"",
+    "textoSecundario": ""
   },
 
 
