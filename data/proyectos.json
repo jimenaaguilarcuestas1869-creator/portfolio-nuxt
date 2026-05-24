@@ -426,23 +426,73 @@
   {
     "id": "bandcamp-sistema-módulos",
     "titulo": "MÓDULOS",
-    "subtitulo": " Sistema de composición modular",
+    "subtitulo": " Diferentes módulos y su significado",
     "categoria": "sistema",
     "descripcion": "Los módulos representan los valores de marca: conexión ( cuadrados azules, simbolizan una comunidad solida), fidelidad (circulo amarillo, simmboliza el producto tangible) y cercanía (zigzag , simboliza el sonido y la repercusion del artista)",
     "textoSecundario": "",
     "portada": "/img/sistema/módulos.png",
-    "galeria": []
+    "galeria": [
+      "/img/sistema/módulos.png",
+      "/img/sistema/explicación_simbólica.png"
+    ]
   },
 
   {
     "aplicaciones": true,
     "id": "bandcamp-sistema-retícula",
     "titulo": "RETÍCULA Y COMPOSICIÓN",
-    "subtitulo": " Sistema de composición modular",
+    "subtitulo": "Retícula modular para aplicaciones gráficas",
     "categoria": "sistema",
     "descripcion": "A partir de una cuadrícula base de cuadrados se desarroyan las diferentes conbianciones de módulos, alternando colores, tamaños, posiciones, espaciados y secciones de estos. ",
     "textoSecundario": "",
     "portada": "/img/sistema/retícula_módulos.png",
-    "galeria": []
+    "galeria": [
+      "/img/sistema/retícula_módulos.png"
+    ]
+    } ,
+
+    {
+    "aplicaciones": true,
+    "id": "bandcamp-sistema-usos",
+    "titulo": "USOS INCORRECTOS",
+    "subtitulo": " Distorsión y recarga visual",
+    "categoria": "sistema",
+    "descripcion": "Los módulos no se deben distorsionar en vertical ni orizontal, tampoco se deben usar de manera recargada, combinando demasiados colores, tamaños o combinaciones", 
+    "textoSecundario": "",
+    "portada": "/img/sistema/distorsión.png",
+    "galeria": [
+      "/img/sistema/distorsión.png",
+      "/img/sistema/combinaciones_recargadas.png"
+    ]
+    },
+
+    {
+    "aplicaciones": true,
+    "id": "bandcamp-sistema-tamaños",
+    "titulo": "Tamaños del módulo",
+    "subtitulo": "Normas para la escala del módulo",
+    "categoria": "sistema",
+    "descripcion": "El tamaño de los módulos puede cambiar siempre en base a la cuadricula base", 
+    "textoSecundario": "",
+    "portada": "/img/sistema/escalas.png",
+    "galeria": [
+      "/img/sistema/escalas.png"
+    ]
+    } ,
+
+    {
+    "aplicaciones": true,
+    "id": "bandcamp-sistema-isotipo",
+    "titulo": "Isotipo diferenciador",
+    "subtitulo": " Distorsión y recarga visual",
+    "categoria": "sistema",
+    "descripcion": "El isotipo diferenciador se forma en base a los tres módulos básicos, representando a cada uno de los usuarios de la plataforma (fan, músico y productor). Se pueden usar de manera independiente en entornos digitales como avatares de perfil o acompañando al logo horizontal en el header de la web tras el inicio de sesión, personalizando al máximo la experiencia de navegación del usuario.", 
+    "textoSecundario": "",
+    "portada": "/img/sistema/mascota.png",
+    "galeria": [
+      "/img/sistema/mascota.png",
+      "/img/sistema/construcción_isotipo.png"
+    ]
     } 
+
 ]
