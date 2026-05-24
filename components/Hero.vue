@@ -2,7 +2,6 @@
 import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 
-// 1. Añadimos la lista de canciones (modifica los nombres si tus archivos se llaman diferente)
 const playlist = [
   '/audio/musica1.m4a',
   '/audio/musica2.m4a',
@@ -13,7 +12,6 @@ const indiceActual = ref(0)
 const audioElement = ref(null)
 const estaSonando = ref(false)
 
-// Función para pausar o reproducir la música
 const alternarMusica = () => {
   if (!audioElement.value) return
 
@@ -25,7 +23,7 @@ const alternarMusica = () => {
   }
 }
 
-// Función auxiliar para forzar la reproducción de manera segura
+
 const reproducirCancion = () => {
   audioElement.value.play()
     .then(() => {
@@ -36,14 +34,14 @@ const reproducirCancion = () => {
     })
 }
 
-// 2. Función automática que se activa al terminar una canción
+ 
 const siguienteCancion = () => {
   if (!audioElement.value) return
 
-  // Avanza al siguiente índice. Si llega al final de la playlist, vuelve a empezar desde 0
+  
   indiceActual.value = (indiceActual.value + 1) % playlist.length
 
-  // Pequeña pausa de 100ms para asegurar que el navegador cargue el cambio de 'src' antes de reproducir
+  
   setTimeout(() => {
     reproducirCancion()
   }, 100)
@@ -52,17 +50,17 @@ const siguienteCancion = () => {
 onMounted(() => {
   // Animación para el primer muñeco
   gsap.to('.shape-1', {
-    y: -20,                // Sube 20 píxeles
-    duration: 2,           // Tarda 2 segundos en subir
-    yoyo: true,            // Cuando llega arriba, vuelve abajo
-    repeat: -1,            // Se repite infinitamente
-    ease: 'power1.inOut'   // Movimiento suave al arrancar y frenar
+    y: -20,                
+    duration: 2,           
+    yoyo: true,            
+    repeat: -1,            
+    ease: 'power1.inOut'   
   })
 
-  // Animación para el segundo muñeco (con tiempos ligeramente cambiados)
+  
   gsap.to('.shape-2', {
-    y: -15,                // Sube 15 píxeles
-    duration: 2.5,         // Tarda 2.5 segundos
+    y: -15,                
+    duration: 2.5,         
     yoyo: true,
     repeat: -1,
     ease: 'power1.inOut'
@@ -94,7 +92,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Estilos del contenedor central */
+
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -104,50 +102,50 @@ onMounted(() => {
   z-index: 10;
 }
 
-/* Contenedor del botón justo debajo del logo */
+
 .contenedor-reproductor {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; /* Separación prudente bajo las letras gigantes */
+  margin-top: 20px; 
   width: 100%;
 }
 
-/* Botón con la estética exacta de burbuja inflada y trazo negro */
+
 .boton-burbuja-play {
-  background-color: #1A73C1; /* Color Celeste vibrante */
+  background-color: #1A73C1; 
   color: #EEE6D5;
-  border: 3px solid #000000; /* Borde negro supergrueso idéntico al logo */
+  border: 3px solid #000000; 
   width: 75px;
   height: 75px;
-  border-radius: 50%; /* Esfera perfecta */
+  border-radius: 50%; 
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 0 #000000; /* Efecto de sombra 3D rígida abajo */
+  box-shadow: 0 6px 0 #000000; 
   transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
 }
 
-/* Efecto clic interactivo: El botón físicamente se hunde */
+
 .boton-burbuja-play:active {
   transform: translateY(4px);
   box-shadow: 0 2px 0 #000000;
 }
 
-/* Estilo del icono interno con contorno adaptado al estilo Pop */
+
 .icono-estado {
-  font-family: 'Arial Black', 'Impact', sans-serif; /* Tipografía ultra-gruesa */
+  font-family: 'Arial Black', 'Impact', sans-serif; 
   font-size: 2.3rem;
   line-height: 1;
-  -webkit-text-stroke: 2px #000000; /* Contorno negro para el propio símbolo de play/pause */
+  -webkit-text-stroke: 2px #000000; 
   text-shadow: 2px 2px 0px #000000;
   user-select: none;
-  /* Pequeño ajuste visual para centrar perfectamente el triángulo del Play */
+
   transform: v-bind(estaSonando ? 'none' : 'translateX(3px)'); 
 }
 
-/* Cambio dinámico a color Cyan eléctrico cuando esté sonando */
+
 .boton-burbuja-play.reproduciendo {
   background-color: #1A73C1; 
 }

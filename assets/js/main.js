@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 menuToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
                 
-                // Bloquear scroll si el menú está abierto
                 if (navMenu.classList.contains('active')) {
                     document.body.style.overflow = 'hidden';
                 } else {
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
 
-            // Cerrar el menú al hacer clic en un enlace
             const navLinks = navMenu.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.onclick = () => {
@@ -41,10 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         console.log("Re-iniciando scripts...");
         
-        // Se limpian rastros de animaciones anteriores
         ScrollTrigger.getAll().forEach(t => t.kill());
 
-        // 1. Hero y Curvas
         const heroLogo = document.querySelector('.hero-logo-main');
         if (heroLogo) {
             gsap.fromTo(heroLogo, 
@@ -54,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         animarCurvas();
 
-        // 2. Carga de Proyectos (Solo si se esta en la home/sección proyectos)
         if (document.querySelector('.projects-grid')) {
             fetch('assets/data/proyectos.json')
                 .then(res => res.json())
@@ -66,11 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 .catch(err => console.error("Error cargando JSON"));
         }
 
-        // 3. Activar el resto
         configurarScrollReveal();
         gestionarBackToTop();
         
-        // Refresco final para que GSAP mida bien los laterales
         setTimeout(() => {
             ScrollTrigger.refresh();
         }, 200);
@@ -208,7 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* --- EN main.js (Función asignarEventosModal) --- */
 
     function asignarEventosModal() {
         const modal = document.getElementById('project-modal');
@@ -221,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const v = modal.querySelector('video');
             if (v) {
                 v.pause();
-                v.src = ""; // Cortamos la carga del vídeo
+                v.src = ""; 
             }
             gsap.to(modal, {
                 opacity: 0,
@@ -236,7 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        // Asigna el clic a la X
         if (closeBtn) {
             closeBtn.onclick = cerrarModal;
         }
@@ -248,13 +239,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
 
-        // 2. ABRIR EL MODAL (Al hacer clic en una card)
+        // 2. ABRIR EL MODAL 
         document.querySelectorAll('.project-card').forEach(card => {
             card.onclick = () => {
                 const proy = proyectosGlobal.find(p => p.id == card.dataset.id);
                 if (!proy) return;
 
-                // Rellenar contenido
                 document.getElementById('modal-title').innerText = proy.titulo;
                 document.getElementById('modal-category').innerText = proy.categoria;
                 document.getElementById('modal-description').innerText = proy.descripcion;
@@ -344,11 +334,9 @@ document.addEventListener("DOMContentLoaded", () => {
     barba.init({
         transitions: [{
             name: 'fade',
-            // Cuando carga la web por primera vez
             once() { 
                 ejecutarTodo(); 
             },
-            // Cada vez que termina una transición a una página nueva
             afterEnter(data) {
                 ejecutarTodo();
                 window.scrollTo(0, 0);

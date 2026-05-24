@@ -78,7 +78,6 @@ const togglePlay = () => {
 </script>
 
 <style scoped>
-/* Importación de la fuente Satoshi */
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
 
 /* --- ESTILO GLOBAL INTERFAZ FIGMA --- */
@@ -196,7 +195,7 @@ const togglePlay = () => {
   opacity: 0.9;
 }
 
-/* --- ACCIONES INTERACTIVAS (Línea y Texto cambian a Negro en Hover) --- */
+/* --- Línea y Texto cambian a Negro en Hover --- */
 .card-actions-azul {
   display: flex;
   align-items: center;
@@ -220,7 +219,7 @@ const togglePlay = () => {
 
 .btn-play:hover {
   border-color: #000000;
-  color: #000000; /* El icono de línea cambia a negro */
+  color: #000000; 
 }
 
 .btn-discover {
@@ -242,7 +241,7 @@ const togglePlay = () => {
 
 .btn-discover:hover {
   border-color: #000000;
-  color: #000000; /* El texto interior cambia a negro */
+  color: #000000; 
 }
 
 /* --- METADATOS VERDE --- */

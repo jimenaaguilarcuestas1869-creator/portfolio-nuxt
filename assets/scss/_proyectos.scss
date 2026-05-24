@@ -91,16 +91,16 @@
   }
 
   @media (min-width: 1024px) {
-    left: 0; /* En PC se asienta de forma natural */
+    left: 0; 
   }
 }
 
 /* --- CONTENEDOR UNIFICADO DE PESTAÑAS --- */
 .libreta-pestanas {
   display: flex;
-  flex-direction: column; /* Estética de archivador en vertical siempre */
-  height: 85%; /* No ocupa el 100% para que no se estiren demasiado los botones */
-  gap: 6px; /* Separación limpia entre pestañas */
+  flex-direction: column; 
+  height: 85%; 
+  gap: 6px; 
   width: auto;
 
   .pestana-btn {
@@ -118,18 +118,18 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     
-    /* 📱 COMPORTAMIENTO POR DEFECTO (MÓVIL) */
-    width: 20px; /* Tiras de color ultra finas en el borde izquierdo */
-    flex: 1; /* Se reparten el alto disponible de forma idéntica */
+    /* COMPORTAMIENTO POR DEFECTO (MÓVIL) */
+    width: 20px; 
+    flex: 1; 
 
     span {
       font-size: 0.75rem;
       font-weight: bold;
-      writing-mode: horizontal-tb; /* Lectura natural en horizontal */
+      writing-mode: horizontal-tb; 
       padding: 0 10px;
     }
 
-    // Paleta cromática exacta por orden
+    // Paleta cromática
     &:nth-child(1) { background-color: #1D74CA; } 
     &:nth-child(2) { background-color: #E24632; } 
     &:nth-child(3) { background-color: #1AA74C; } 
@@ -137,21 +137,21 @@
     &:nth-child(5) { background-color: #F472A5; } 
     &:nth-child(6) { background-color: #00BCD4; } 
 
-    /* PESTAÑA ACTIVA EN MÓVIL */
+    /* MÓVIL */
     &.active {
-      width: 110px; /* Crece hacia la derecha de forma fluida */
+      width: 110px; 
       box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.15);
       z-index: 110;
       border-radius: 0 10px 10px 0;
     }
 
-    /* 💻 COMPORTAMIENTO PARA ESCRITORIO (PC) */
+    /*  PARA ESCRITORIO  */
     @media (min-width: 1024px) {
-      width: 60px; /* Ancho base en PC */
+      width: 60px; 
       border-radius: 0 12px 12px 0;
 
       span {
-        writing-mode: vertical-rl; /* Texto rotado estético en escritorio */
+        writing-mode: vertical-rl; 
         font-size: 0.95rem;
         padding: 0;
       }
@@ -161,11 +161,11 @@
       }
 
       &.active {
-        width: 160px; /* Expansión grande en PC */
+        width: 160px; 
         box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
         
         span {
-          writing-mode: horizontal-tb; /* Pasa a horizontal al estar activa */
+          writing-mode: horizontal-tb; 
         }
       }
     }

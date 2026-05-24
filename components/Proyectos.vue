@@ -112,7 +112,6 @@ const esEstatico = (proyecto) => {
 
 const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : false
 
-// --- ANIMACIONES GSAP PARA ELEMENTOS INTERACTIVOS (CESTA) ---
 // --- EFECTO GSAP DE IMÁN INVERTIDO (REPULSIÓN) ---
 const animarRepulsion = (event) => {
   const el = event.currentTarget
@@ -664,7 +663,6 @@ const restaurarPosicion = (event) => {
     align-self: flex-start;
   }
 
-  /* Layout especial para la cesta gigante interactiva a pantalla completa */
   .manual-layout:has(.contenedor-cesta) {
     flex-direction: column !important;
     align-items: flex-start;
@@ -721,21 +719,18 @@ const restaurarPosicion = (event) => {
   pointer-events: auto; 
 }
 
-/* Posición de la Camiseta en la cesta (Abajo a la izquierda) */
 .elemento-vinilo {
   width: 32%;
   bottom: 15%;
   left: 10%;
 }
 
-/* Posición del Cassette en la cesta (Arriba a la derecha) */
 .elemento-cassette {
   width: 28%;
   top: 20%;
   right: 12%;
 }
 
-/* Posición del Vinilo en la cesta (Centro-Derecha) */
 .elemento-vinilo2 {
   width: 28%;
   top: 40%;
