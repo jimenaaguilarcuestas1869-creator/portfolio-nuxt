@@ -63,63 +63,73 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 40px 60px 120px; 
   box-sizing: border-box;
   position: relative;
+  padding: 60px 20px 60px 45px; 
+
+  @media (min-width: 1024px) {
+    padding: 60px 40px 60px 120px;
+  }
 }
 
 .libreta-sidebar {
   position: fixed;
-  left: -80px; 
-  
-  
-  top: 60px; 
-  
-  
+  left: 0;
+  top: 60px;
   height: calc(100vh - 60px); 
-  
-  width: auto;
   z-index: 100;
   display: flex;
   align-items: center;
   opacity: 0; 
   pointer-events: none; 
-  transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease; 
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+  width: auto;
 
   &.is-visible {
-    left: 0;
     opacity: 1;
     pointer-events: auto;
   }
+
+  @media (min-width: 1024px) {
+    left: 0; /* En PC se asienta de forma natural */
+  }
 }
+
+/* --- CONTENEDOR UNIFICADO DE PESTAÑAS --- */
 .libreta-pestanas {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 60px; 
-  gap: 0; 
+  flex-direction: column; /* Estética de archivador en vertical siempre */
+  height: 85%; /* No ocupa el 100% para que no se estiren demasiado los botones */
+  gap: 6px; /* Separación limpia entre pestañas */
+  width: auto;
 
   .pestana-btn {
-    flex: 1; 
     border: none;
     padding: 0;
-    font-size: 0.95rem;
-    font-weight: bold;
     cursor: pointer;
-    border-radius: 0 12px 12px 0;
-    transition: all 0.3s ease;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    width: 60px;
     overflow: hidden;
     white-space: nowrap;
-    writing-mode: vertical-rl;
     text-transform: uppercase;
     letter-spacing: 1px;
+    
+    /* 📱 COMPORTAMIENTO POR DEFECTO (MÓVIL) */
+    width: 20px; /* Tiras de color ultra finas en el borde izquierdo */
+    flex: 1; /* Se reparten el alto disponible de forma idéntica */
 
-    // Paleta exacta por orden del menú
+    span {
+      font-size: 0.75rem;
+      font-weight: bold;
+      writing-mode: horizontal-tb; /* Lectura natural en horizontal */
+      padding: 0 10px;
+    }
+
+    // Paleta cromática exacta por orden
     &:nth-child(1) { background-color: #1D74CA; } 
     &:nth-child(2) { background-color: #E24632; } 
     &:nth-child(3) { background-color: #1AA74C; } 
@@ -127,64 +137,56 @@
     &:nth-child(5) { background-color: #F472A5; } 
     &:nth-child(6) { background-color: #00BCD4; } 
 
-    &:hover {
-      width: 75px;
+    /* PESTAÑA ACTIVA EN MÓVIL */
+    &.active {
+      width: 110px; /* Crece hacia la derecha de forma fluida */
+      box-shadow: 3px 2px 12px rgba(0, 0, 0, 0.15);
+      z-index: 110;
+      border-radius: 0 10px 10px 0;
     }
 
-    &.active {
-      width: 160px; 
-      writing-mode: horizontal-tb; 
-      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-      position: relative;
-      z-index: 110;
+    /* 💻 COMPORTAMIENTO PARA ESCRITORIO (PC) */
+    @media (min-width: 1024px) {
+      width: 60px; /* Ancho base en PC */
+      border-radius: 0 12px 12px 0;
+
+      span {
+        writing-mode: vertical-rl; /* Texto rotado estético en escritorio */
+        font-size: 0.95rem;
+        padding: 0;
+      }
+
+      &:hover {
+        width: 75px;
+      }
+
+      &.active {
+        width: 160px; /* Expansión grande en PC */
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+        
+        span {
+          writing-mode: horizontal-tb; /* Pasa a horizontal al estar activa */
+        }
+      }
     }
   }
 }
-.libreta-pestanas {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 60px; 
-  gap: 0; 
 
-  .pestana-btn {
-    flex: 1; 
-    border: none;
-    padding: 0;
-    font-size: 0.95rem;
+.libreta-cuerpo {
+  width: 100%;
+  background-color: #F4EBE1; 
+  padding: 20px 0;
+
+  h2.manual-title {
+    font-size: 2.8rem;
+    color: #0B2545;
     font-weight: bold;
-    cursor: pointer;
-    border-radius: 0 12px 12px 0;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    width: 60px;
-    overflow: hidden;
-    white-space: nowrap;
-    writing-mode: vertical-rl;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    word-break: break-word;
 
-    // Paleta exacta por orden del menú
-    &:nth-child(1) { background-color: #1D74CA; } // Concepto / Introducción
-    &:nth-child(2) { background-color: #E24632; } // Núcleo
-    &:nth-child(3) { background-color: #1AA74C; } // Sistema
-    &:nth-child(4) { background-color: #F9B81A; } // Recursos
-    &:nth-child(5) { background-color: #F472A5; } // Aplicaciones
-    &:nth-child(6) { background-color: #00BCD4; } // Web
-
-    &:hover {
-      width: 75px;
-    }
-
-    &.active {
-      width: 160px; 
-      writing-mode: horizontal-tb; 
-      box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-      position: relative;
-      z-index: 110;
+    @media (min-width: 1024px) {
+      font-size: 5.5rem;
     }
   }
 }
