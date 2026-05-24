@@ -111,22 +111,45 @@ const esEstatico = (proyecto) => {
 }
 
 const esVideo = (url) => url ? String(url).toLowerCase().endsWith('.mp4') : false
+
 // --- ANIMACIONES GSAP PARA ELEMENTOS INTERACTIVOS (CESTA) ---
-const animarEntradaCapas = (event) => {
-  gsap.to(event.currentTarget, {
-    y: -12,             // Se eleva sutilmente hacia arriba
-    scale: 1.06,        // Crece un 6% para dar feedback visual
-    duration: 0.35,     // Tiempo de transición suave
-    ease: 'power2.out'  // Curva de velocidad desacelerada
+// --- EFECTO GSAP DE IMÁN INVERTIDO (REPULSIÓN) ---
+const animarRepulsion = (event) => {
+  const el = event.currentTarget
+  const rect = el.getBoundingClientRect()
+  
+  // 1. Calculamos el punto central del objeto flotante en la pantalla
+  const centroX = rect.left + rect.width / 2
+  const centroY = rect.top + rect.height / 2
+  
+  // 2. Vector de distancia entre el cursor y el centro del objeto
+  const deltaX = event.clientX - centroX
+  const deltaY = event.clientY - centroY
+  
+  // 3. Establecemos la fuerza de empuje (a número más negativo, mayor repulsión)
+  const fuerza = -90 
+  
+  // 4. Normalizamos el vector para que la velocidad de huida sea homogénea
+  const distancia = Math.sqrt(deltaX * deltaX + deltaY * deltaY) || 1
+  const moverX = (deltaX / distancia) * fuerza
+  const moverY = (deltaY / distancia) * fuerza
+
+  // 5. Desplazamos el elemento suavemente con GSAP
+  gsap.to(el, {
+    x: moverX,
+    y: moverY,
+    duration: 0.4,
+    ease: 'power2.out'
   })
 }
 
-const animarSalidaCapas = (event) => {
+// Retorno amortiguado del objeto al salir el ratón de sus límites
+const restaurarPosicion = (event) => {
   gsap.to(event.currentTarget, {
+    x: 0,
     y: 0,
-    scale: 1,
-    duration: 0.3,
-    ease: 'power2.out'
+    duration: 0.6,
+    ease: 'elastic.out(1.2, 0.5)' // Genera un rebote de muelle orgánico al regresar
   })
 }
 </script>
@@ -246,6 +269,38 @@ const animarSalidaCapas = (event) => {
                 </div>
               </div>
               
+              <div v-else-if="proyecto.portada && proyecto.portada.includes('cesta_web.svg')" class="contenedor-cesta" @click.stop>
+                <img 
+                  :src="proyecto.portada.startsWith('assets/') ? proyecto.portada.replace('assets/', '/') : proyecto.portada" 
+                  :alt="proyecto.titulo || 'Imagen del proyecto'" 
+                  class="cesta-base"
+                >
+                
+                <img 
+                  src="/img/camiseta_cesta_web.png" 
+                  class="objeto-flotante elemento-vinilo" 
+                  @mousemove="animarRepulsion" 
+                  @mouseleave="restaurarPosicion"
+                  alt="Camiseta interactiva"
+                >
+                
+                <img 
+                  src="/img/cassette_cesta_web.png" 
+                  class="objeto-flotante elemento-cassette" 
+                  @mousemove="animarRepulsion" 
+                  @mouseleave="restaurarPosicion"
+                  alt="Cassette interactivo"
+                >
+
+                <img 
+                  src="/img/vinilo_cesta_web.png" 
+                  class="objeto-flotante elemento-vinilo2" 
+                  @mousemove="animarRepulsion" 
+                  @mouseleave="restaurarPosicion"
+                  alt="Vinilo interactivo"
+                >
+              </div>
+
               <img 
                 v-else-if="proyecto.portada" 
                 :src="proyecto.portada.startsWith('assets/') ? proyecto.portada.replace('assets/', '/') : proyecto.portada" 
@@ -599,12 +654,27 @@ const animarSalidaCapas = (event) => {
   .manual-layout, .aplicaciones-layout {
     flex-direction: row;
   }
+  
   .manual-left {
     max-width: 50%;
   }
+  
   .manual-right {
     margin-top: 140px;
     align-self: flex-start;
+  }
+
+  /* Layout especial para la cesta gigante interactiva a pantalla completa */
+  .manual-layout:has(.contenedor-cesta) {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+  .manual-layout:has(.contenedor-cesta) .manual-left {
+    max-width: 100% !important; 
+  }
+  .manual-layout:has(.contenedor-cesta) .manual-right {
+    margin-top: 40px !important; 
+    max-width: 800px;
   }
 }
 
@@ -621,5 +691,54 @@ const animarSalidaCapas = (event) => {
 .swiper-slide, 
 .swiper-slide img {
   box-shadow: none !important;
+}
+
+/* ==========================================================================
+   ESTILOS COMPLEMENTARIOS: ESCENARIO INTERACTIVO DE LA CESTA GIGANTE
+   ========================================================================== */
+.contenedor-cesta {
+  position: relative;
+  width: 100%;
+  max-width: 1375px; 
+  margin-top: 20px;
+  display: inline-block;
+  overflow: visible; 
+}
+
+.cesta-base {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.objeto-flotante {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  height: auto;
+  will-change: transform;
+  box-shadow: none !important;
+  pointer-events: auto; 
+}
+
+/* Posición de la Camiseta en la cesta (Abajo a la izquierda) */
+.elemento-vinilo {
+  width: 32%;
+  bottom: 15%;
+  left: 10%;
+}
+
+/* Posición del Cassette en la cesta (Arriba a la derecha) */
+.elemento-cassette {
+  width: 28%;
+  top: 20%;
+  right: 12%;
+}
+
+/* Posición del Vinilo en la cesta (Centro-Derecha) */
+.elemento-vinilo2 {
+  width: 28%;
+  top: 40%;
+  right: 30%;
 }
 </style>
