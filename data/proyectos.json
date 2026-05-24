@@ -115,8 +115,10 @@
     "categoria": "aplicaciones",
     "descripcion": "Cartel basado en ilustración para medios horizontales",
     "textoSecundario": "",
-    "portada": "/img/Banner mockup 1.png",
-    "galeria": []
+    "portada": "/img/aplicaciones/Banner mockup 1.png",
+    "galeria": [
+      "/img/aplicaciones/Banner mockup 1.png"
+    ]
   },
   {
     "aplicaciones": true,
@@ -126,8 +128,12 @@
     "categoria": "aplicaciones",
     "descripcion": "Cartel basado en ilustración para medios verticales (banderillas)",
     "textoSecundario": "",
-    "portada": "/img/Free Single Banner Mockup2.png",
-    "galeria": []
+    "portada": "/img/aplicaciones/Free Single Banner Mockup2.png",
+    "galeria": [
+      "/img/aplicaciones/Free Single Banner Mockup2.png",
+      "/img/aplicaciones/Free Single Banner Mockup.png",
+      "/img/aplicaciones/Free Single Banner Mockupgrsgr.png"
+    ]
   },
   {
     "aplicaciones": true,
@@ -137,8 +143,11 @@
     "categoria": "aplicaciones",
     "descripcion": "Gran banner promocional para carreteras",
     "textoSecundario": "",
-    "portada": "/img/Cartel mockup 2.jpg",
-    "galeria": []
+    "portada": "/img/aplicaciones/Cartel mockup 2.jpg",
+    "galeria": [
+      "/img/aplicaciones/Cartel mockup 2.jpg",
+      "/img/aplicaciones/sky billboard mockup.jpg"
+    ]
   },
   {
     "aplicaciones": true,
@@ -148,8 +157,11 @@
     "categoria": "aplicaciones",
     "descripcion": "Carteles para el metro y paneles publicitarios urbanos",
     "textoSecundario": "",
-    "portada": "/img/behanwarg.png",
-    "galeria": []
+    "portada": "/img/aplicaciones/behanwarg.png",
+    "galeria": [
+      "/img/aplicaciones/behanwarg.png",
+      "/img/aplicaciones/frnakie_cosmos.png"
+    ]
   },
   {
     "aplicaciones": true,
@@ -159,8 +171,10 @@
     "categoria": "aplicaciones",
     "descripcion": "Contratos en papel y tarjetas comerciales con los acabados y texturas del sistema.",
     "textoSecundario": "",
-    "portada": "/img/Free Small Stationery Set Mockup.png",
-    "galeria": []
+    "portada": "/img/aplicaciones/Free Small Stationery Set Mockup.png",
+    "galeria": [
+      "/img/aplicaciones/Free Small Stationery Set Mockup.png"
+    ]
   },
   {
     "id": "bandcamp-interfaz-ui",
@@ -416,7 +430,7 @@
     "categoria": "sistema",
     "descripcion": "Los módulos representan los valores de marca: conexión ( cuadrados azules, simbolizan una comunidad solida), fidelidad (circulo amarillo, simmboliza el producto tangible) y cercanía (zigzag , simboliza el sonido y la repercusion del artista)",
     "textoSecundario": "",
-    "portada": "/img/módulos.png",
+    "portada": "/img/sistema/módulos.png",
     "galeria": []
   },
 
@@ -428,7 +442,7 @@
     "categoria": "sistema",
     "descripcion": "A partir de una cuadrícula base de cuadrados se desarroyan las diferentes conbianciones de módulos, alternando colores, tamaños, posiciones, espaciados y secciones de estos. ",
     "textoSecundario": "",
-    "portada": "/img/retícula_módulos.png",
+    "portada": "/img/sistema/retícula_módulos.png",
     "galeria": []
     } 
 ]
