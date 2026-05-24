@@ -486,7 +486,7 @@
     "titulo": "Isotipo diferenciador",
     "subtitulo": " Distorsión y recarga visual",
     "categoria": "sistema",
-    "descripcion": "El isotipo diferenciador se forma en base a los tres módulos básicos, representando a cada uno de los usuarios de la plataforma (fan, músico y productor). Se pueden usar de manera independiente en entornos digitales como avatares de perfil o acompañando al logo horizontal en el header de la web tras el inicio de sesión, personalizando al máximo la experiencia de navegación del usuario.", 
+    "descripcion": "El isotipo diferenciador se forma en base a los tres módulos básicos, representando a cada uno de los usuarios de la plataforma (fan, músico y productor). Se puede usar como avatar en entornos digitales y acompañando al logotipo. Su construcción básica se forma a base de círculos (cabeza)  y cuadrados (cuerpo y nariz) ", 
     "textoSecundario": "",
     "portada": "/img/sistema/mascota.png",
     "galeria": [
