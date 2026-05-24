@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     padding-top: 80px; 
     z-index: 10; 
 
@@ -20,7 +21,7 @@
     }
 
     .hero-logo-main {
-        width: clamp(1300px, 50vw, 350px);
+        width: clamp(280px, 75vw, 1100px);
         height: auto;
         object-fit: contain;
     }
@@ -32,21 +33,30 @@
         will-change: transform;
 
         &.shape-1 { 
-            width: 300px;
-            top: 500px;
+            width: clamp(140px, 25vw, 380px);
+            top: 80%;
             left: -50px; 
+            bottom: auto;
         }
         &.shape-2 { 
-            width: 300px;
-            bottom: 500px; 
+            width: clamp(150px, 22vw, 300px);
+            bottom: 70%; 
             right: -20px; 
+            top: auto;
         }
 
-        // --- RESPONSIVE PARA LAS CURVAS ---
-        @media (max-width: 768px) {
-            &.shape-1 { width: 300px; left: -100px; }
-            &.shape-2 { width: 300px; right: -100px; bottom: 50px; }
-            &.shape-3 { display: none; }
+        // --- RESPONSIVE PARA LAS ILUSTRACIONES ---
+        @media (min-width: 1024px) {
+            &.shape-1 { 
+                left: -30px; 
+                top: auto; 
+                bottom: -15%;
+            }
+            &.shape-2 { 
+                right: -20px; 
+                top: auto;
+                bottom: 60%;
+            }
         }
     }
 }
